@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Đàm Tân Tập (Số 3) - Luận Về Chữ Lợi</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc - "Nhân Nghĩa" */
+        .container::after {
+            content: "仁義"; /* Nhân Nghĩa */
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.055); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.6em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Superscript (Chú thích số) */
+        sup {
+            color: #d4af37;
+            font-size: 0.65em;
+            padding-left: 2px;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; /* Vàng - Thánh hiền, Nhân nghĩa */
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; /* Đỏ nhạt - Sự loạn, mưu lợi */
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.4em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1.05em; line-height: 1.75; }
+            .container::after { font-size: 3em; right: 20px; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Đàm Tân Tập</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            明教曰：太史公讀孟子，至梁惠王問，何以利吾國，不覺置卷長歎！嗟乎，利誠亂之始也。故夫子罕言利，常防其源者。源者始也。尊崇貧賤，好利之弊，何以別焉。夫在公者，取利不公則法亂，在私者，以欺取利則事亂。事亂則人爭不平，法亂則人怨不服。其悖戾鬥爭，不顧死亡者，自此發矣。是不亦利誠亂之始也。且聖賢深戒，去利尊先仁義。而後世尚有恃利相欺傷風敗教者何限。況復公然，張其爭利道而行之，欲天下風俗正而不驕不薄，其可得乎！<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 鐔津集</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Minh Giáo viết: Thái Sử Công độc Mạnh Tử, chí Lương Huệ Vương vấn, hà dĩ lợi ngô quốc, bất giác trí quyển trường thán! Ta hồ, lợi thành loạn chi thủy dã. Cố Phu Tử hãn ngôn lợi. Thường phòng kỳ nguyên giả. Nguyên giả thủy dã. Tôn sùng bần tiện, hiếu lợi chi tệ, hà dĩ biệt yên. Phù tại công giả, thủ lợi bất công tắc pháp loạn, tại tư giả, dĩ khi thủ lợi tắc sự loạn. Sự loạn tắc nhân tranh bất bình, pháp loạn tắc nhân oán bất phục. Kỳ bội lệ đấu tranh, bất cố tử vong giả, tự thử phát hỹ. Thị bất diệc lợi thành, loạn chi thuỷ dã. Thả Thánh hiền thâm giới, khử lợi tôn tiên nhân nghĩa. Nhi hậu thế thượng hữu thị lợi tương khi thương phong bại giáo giả hà hạn. Huống phục công nhiên, trương kỳ tranh lợi đạo nhi hành chi, dục thiên hạ phong tục chính nhi bất kiêu bất bạc, kỳ khả đắc hồ!
+            <div class="source">— Đàm Tân Tập.</div>
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p><span class="kw-good">Ngài Minh Giáo nói:</span> <span class="kw-good">Thái Sử Công</span><sup>17</sup> đọc sách <span class="kw-good">Mạnh Tử</span> tới chỗ Lương Huệ Vương hỏi thầy Mạnh Tử<sup>18</sup>, đem gì để lợi cho nước tôi, bất giác để sách xuống mà thở dài. Than ôi! <span class="kw-bad">Lợi cái mầm mống của loạn</span>, nên <span class="kw-good">Phu Tử</span><sup>19</sup> ngài ít nói đến lợi, để đề phòng cái gốc. Vì gốc là mầm móng phát sinh. Người tôn quý kẻ bần tiện, đối với cái tệ hiếu lợi thì đều giống nhau.</p>
+            
+            <p>Ôi! Người ở chỗ công, nếu lấy lợi không công bằng, thời làm rối loạn pháp luật, kẻ ở chỗ riêng, nếu lấy lợi bằng cách lừa bịp, thời làm rối loạn sự việc. Sự việc rối loại thời nhân sự bất bình, pháp luật rối loạn thời nhân dân chẳng phục. Gây ra mối họa xung đột rồi cùng nhau đấu tranh, chẳng đoái hoài đến cảnh chết chóc cũng vì thế mà phát sanh. Ðó chẳng phải chỉ vì lợi mà trở thành cái mầm mống rối loạn đấy ư?</p>
+            
+            <div class="conclusion">
+                Như các bậc Thánh hiền xưa kia thì lại cảnh giới, bỏ cái lợi tôn điều <span class="kw-good">nhân nghĩa</span>, mà người đời sau lại cậy mối lợi để dối trá lẫn nhau, làm tổn thương đến phong tục, bại hoại đến thanh giáo không có giới hạn, lại còn công nhiên noi theo con đường tranh danh đoạt lợi để đi, mà muốn phong tục tốt trong thiên hạ không phải không mờ há lại được vậy ư!
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Điển tích</h3>
+            <ul>
+                <li><span class="note-num">(17) Thái Sử Công (太史公):</span> Tức là Tư Mã Thiên (145 TCN – 86 TCN), vị sử gia vĩ đại nhất của Trung Quốc cổ đại, tác giả của bộ Sử Ký (史記) lừng danh. Ông nhậm chức Thái Sử Lệnh thời Hán Vũ Đế nên được gọi tôn kính là Thái Sử Công.</li>
+                <li><span class="note-num">(18) Mạnh Tử (孟子):</span> Triết gia Nổi tiếng thứ hai của Nho giáo, chỉ sau Khổng Tử. Chuyện "Lương Huệ Vương hỏi thầy Mạnh Tử" nằm ở ngay chương đầu tiên của sách Mạnh Tử. Khi Lương Huệ Vương hỏi: <em>"Tẩu không quản đường xa ngàn dặm tới đây, hẳn có gì làm lợi cho nước tôi chăng?"</em>, Mạnh Tử đã đáp ngay: <em>"Nhà vua hà tất phải nói đến chữ lợi, chỉ có Nhân và Nghĩa là đủ rồi"</em>.</li>
+                <li><span class="note-num">(19) Phu Tử (夫子):</span> Ở đây chỉ Khổng Tử (551 TCN – 479 TCN), người sáng lập Nho giáo. Trong Luận Ngữ (chương Tử Hãn), có chép: <em>"Tử hãn ngôn lợi, dữ mệnh, dữ nhân"</em> (Khổng Tử rất ít khi nói đến lợi, mà chỉ thường nói đến vận mệnh và chữ Nhân). Ngài xem trọng Đạo Đức (Nhân Nghĩa) hơn tư lợi cá nhân.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

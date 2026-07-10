@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THIỀN LÂM BẢO HUẤN</title>
+    
+    <!-- Nhúng thư viện FontAwesome để gọi icon fa-fire -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Nền Bình minh trên biển khơi (Morning Ocean Sunrise) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        /* Lớp phủ mờ nhẹ để chữ dễ đọc hơn trên nền sáng của bình minh */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4) 0%, rgba(15, 23, 42, 0.1) 50%, rgba(251, 146, 60, 0.2) 100%);
+            z-index: -1;
+        }
+
+        /* Phần Tiêu đề chính */
+        .header-container {
+            background: rgba(20, 30, 50, 0.65);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px 50px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.8em;
+            color: #fde047; /* Vàng nắng sớm */
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px rgba(253, 224, 71, 0.5);
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            font-size: 1.1em;
+            color: #e2e8f0;
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+
+        /* Lưới chứa danh sách 250 links */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            width: 100%;
+            max-width: 1200px;
+            padding-bottom: 50px;
+        }
+
+        /* Từng nút link (Item) */
+        .link-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #f8fafc;
+            font-size: 1.1em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hiệu ứng hover khi đưa chuột vào link */
+        .link-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #fca5a5;
+            color: #fde047;
+            box-shadow: 0 8px 25px rgba(253, 224, 71, 0.2);
+        }
+
+        /* Icon Ngọn Lửa FontAwesome */
+        .link-icon {
+            font-size: 1.2em;
+            margin-right: 12px;
+            color: #fb923c; /* Màu cam ngọn lửa */
+            transition: all 0.3s ease;
+        }
+        
+        .link-item:hover .link-icon {
+            color: #ef4444; /* Chuyển sang đỏ rực khi hover */
+            filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
+        }
+
+        /* Thiết kế nút Cuộn Lên Đầu Trang (Scroll to Top) */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(251, 146, 60, 0.8);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        #scrollTopBtn:hover {
+            background: #ea580c;
+            transform: scale(1.1);
+        }
+
+        /* Tương thích cho thiết bị di động */
+        @media (max-width: 600px) {
+            body { padding: 20px 15px; }
+            .header-container { padding: 25px 20px; }
+            h1 { font-size: 2em; letter-spacing: 2px; }
+            .links-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+            .link-item { padding: 12px 15px; font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Khung Tiêu Đề -->
+    <div class="header-container">
+        <h1>THIỀN LÂM BẢO HUẤN</h1>
+        
+    </div>
+
+    <!-- Khung chứa danh sách các Link -->
+    <div class="links-grid" id="linksGrid">
+        <!-- JS sẽ chèn các thẻ <a> vào đây -->
+    </div>
+
+    <!-- Nút cuộn lên đầu trang (dùng icon mũi tên FontAwesome) -->
+    <button id="scrollTopBtn" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Script tạo tự động 250 links và xử lý nút cuộn -->
+    <script>
+        // 1. Tạo tự động danh sách 250 links
+        const gridContainer = document.getElementById('linksGrid');
+        const totalLinks = 250;
+
+        for (let i = 1; i <= totalLinks; i++) {
+            // Tạo thẻ <a>
+            const a = document.createElement('a');
+            a.href = `index${i}.html`;
+            a.className = 'link-item';
+            a.target = "_blank"; // Mở tab mới khi click (tùy chọn)
+
+            // Gán nội dung cho thẻ với icon ngọn lửa FontAwesome
+            a.innerHTML = `<i class="fa-solid fa-fire link-icon"></i> Bài số ${i}`;
+            
+            // Đưa thẻ vào Grid
+            gridContainer.appendChild(a);
+        }
+
+        // 2. Chức năng hiện/ẩn nút Cuộn lên đầu trang
+        const scrollBtn = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollBtn.style.display = "flex";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        };
+
+        // Hàm cuộn lên đỉnh
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
