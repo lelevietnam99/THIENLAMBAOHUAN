@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Cửu Phong Tập (Số 6) - Đại Khí</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Khí" (器) */
+        .container::after {
+            content: "器";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cửu Phong Tập</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            大覺蓮和尚，初游廬山。圓通訥禪師一見，直以大器期之。或曰：「何自而知之」。訥曰：「此人中正不倚，動靜尊嚴，加以道學，行毅，言簡盡理。凡人資稟如是，鮮不有成器者」。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Đại Giác Liên Hòa Thượng, sơ du Lư Sơn. Viên Thông Nột thiền sư nhất kiến trực dĩ đại khí kỳ chi. Hoặc viết: "Hà tự nhi tri chi". Nột viết: "Tư nhân trung chính bất ỷ, động tĩnh tôn nghiêm, gia dĩ đạo học, hành nghị, ngôn giản tận lý. Phàm nhân tư bẩm như thử, tiển bất hữu thành khí giả".
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Đại Giác Liên Hòa thượng, lần đầu tiên du hành đến <span style="color:#d4af37">Lư Sơn</span><sup>28</sup>, <span style="color:#d4af37">Viên Thông Nột thiền sư</span><sup>29</sup> thoạt thấy, liền đem <span style="color:#d4af37">đại khí</span><sup>30</sup> để kỳ vọng ở người. Hoặc có kẻ nói: "Ngài căn cứ vào đâu mà biết?"</p>
+            <p>Nột thiền sư đáp: "Người ấy <span style="color:#d4af37">trung chính</span><sup>31</sup> không nghiêng ngả, động tĩnh tôn nghiêm, lại thêm vào đó phần đạo học, làm việc ngay thẳng, nói ít mà lý chu. Phàm con người có tư bẩm như thế, ít có ai mà chẳng thành đại khí".</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(28) Lư Sơn:</span> Một ngọn núi nổi tiếng ở tỉnh Giang Tây (Trung Quốc), là trung tâm văn hóa, Phật giáo và Đạo giáo lâu đời.</li>
+                <li><span class="note-num">(29) Viên Thông Nột thiền sư:</span> Thiền sư Viên Thông Cư Nột (1010-1070), một vị thiền sư lỗi lạc đời Bắc Tống, nổi tiếng về sự tinh tường trong việc nhận diện người tài.</li>
+                <li><span class="note-num">(30) Đại khí (大器):</span> Dùng theo điển tích "Đại khí vãn thành" (người có tài năng lớn thì thành tựu chậm nhưng bền vững), chỉ người có tầm vóc, khí chất lớn lao, xứng đáng làm bậc cột trụ.</li>
+                <li><span class="note-num">(31) Trung chính (中正):</span> Ngay thẳng, chính trực, không lệch lạc. Đây là phẩm chất nền tảng để một người trở thành "đại khí".</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Lư Sơn Dã Lục (Số 8) - Tự Lực</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Bản" (本) - Cái gốc rễ */
+        .container::after {
+            content: "本";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Lư Sơn Dã Lục</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            圓通訥和尚曰：積命者在杖，失杖則顛。渡者命在舟，失舟則溺。凡林下人，自無所守，挾外勢以為重者，一旦失其所挾，皆不能免顛溺之患也。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Viên Thông Nột Hòa thượng viết: Tích mệnh giả tại trượng, thất trượng tắc điên. Độ giả mệnh tại chu, thất chu tắc nịch. Phàm lâm hạ nhân, tự vô sở thủ, hiệp ngoại thế dĩ vi trọng giả, nhất đán thất kỳ sở hiệp, giai bất năng miễn điên nịch chi hoạn dã.
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Viên Thông Nột Hòa thượng nói: Tính mệnh của người <span style="color:#d4af37">khoèo</span><sup>37</sup> nhờ vào gậy, mất gậy thì bị ngã. Tính mệnh của kẻ qua đò nương vào thuyền, mất thuyền thì đắm.</p>
+            <p>Phàm người ở chốn tùng lâm, tự mình không duy trì lấy đạo đức ở nội tâm, lại nương cậy vào quyền thế ở bên ngoài, nhất đán cái thế đó mất đi, đều không thể tránh khỏi cái họa <span style="color:#d4af37">khuynh đảo</span><sup>38</sup>.</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(37) Khoèo:</span> Người bị khuyết tật ở chân, đi lại phải dựa vào gậy chống. Ví dụ này nhằm chỉ sự lệ thuộc.</li>
+                <li><span class="note-num">(38) Họa khuynh đảo (顛溺 - Điên nịch):</span> Điên là ngã, nịch là chìm đắm (chết đuối). Chỉ sự sụp đổ, tan vỡ hoặc lâm vào cảnh khốn cùng, tai ương không thể cứu vãn.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

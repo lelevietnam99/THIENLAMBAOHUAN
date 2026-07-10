@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Hành Thực (Số 7) - Tri Túc</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Tri Túc" (知足) */
+        .container::after {
+            content: "知足";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hành Thực</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            仁祖弘祐初，遣銀鐺小使持綠底赤一書，召圓通訥，住孝慈大伽藍。訥稱疾不起。表疏大覺應詔。或曰：「聖天子期崇道德，恩被選石，師何故辭」。訥曰：「余濫預僧倫，視聽不通，幸安林下，飯蔬飲水，雖佛祖有所不為，況其餘哉？」先哲有言：「大名之下，難以久居」。余平生行知足之計，不以聲利自累。若厭於心，何日而足。故東坡常曰：「知安則榮，知足則富」。避名全節，善始善終，在圓通得之矣。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Nhân Tổ Hoằng Hựu sơ, khiển ngân đang tiểu sứ trì lục đề xích nhất thư, triệu Viên Thông Nột, trụ Hiếu Từ đại già lam. Nột xưng tật bất khởi. Biểu sớ Đại Giác ứng chiếu. Hoặc viết: "Thánh Thiên Tử kỳ sùng đạo đức, ân bị tuyển thạch, sư hà cố từ". Nột viết: "Dư lạm dự Tăng luân, thị thính bất thông, hạnh an lâm hạ, phạn sơ ẩm thủy, tuy Phật Tổ hữu sở bất vi, huống kỳ tha dã?" Tiên triết hữu ngôn: "Đại danh chi hạ, nan dĩ cửu cư". Dư bình sinh hành tri túc chi kế, bất dĩ thanh lợi tự lụy. Nhược yếm vu tâm, hà nhật nhi túc. Cố Đông Pha thường viết: "Tri an tắc vinh, tri túc tắc phú". Tỵ danh toàn tiết, thiện thủy thiện chung, tại Viên Thông đắc chi hỹ.
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Năm đầu niên hiệu Hoằng Hựu thời vua <span style="color:#d4af37">Nhân Tổ</span><sup>32</sup>, vua phái khiển sứ giả đem <span style="color:#d4af37">chiếu thư</span><sup>33</sup>, triệu Viên Thông Nột thiền sư trụ trì <span style="color:#d4af37">Hiếu Từ đại già lam</span><sup>34</sup>. Nột thiền sư cáo tật không trở dậy, phái Đại Giác Hòa thượng tiếp nhận chiếu biểu. Có người nói: "Thánh Thiên Tử sùng chuộng đạo đức, ơn gội khắp núi rừng, ngài tại sao lại cố từ?"</p>
+            
+            <p>Nột thiền sư đáp: "Ta lạm nhập vào hàng Tăng, sự thấy nghe chưa thông suốt, may mắn được an phận ở dưới rừng, ăn rau uống nước lã, tuy là việc Phật Tổ cũng còn có chỗ làm chẳng được, huống hồ làm việc khác vậy ư".</p>
+            
+            <p>Tiên triết có nói: "<span style="color:#d4af37">Dưới chỗ đại danh</span><sup>35</sup> khó thể ở lâu được". Ta từ thuở bình sinh, thực hành kế tri túc, tự mình không bận vào đường danh lợi. Nếu đã chán trong nơi tâm thì ngày nào mà chả đủ. Nên <span style="color:#d4af37">Đông Pha</span><sup>36</sup> thường viết: "Biết an thời vinh hiển, biết đủ thời giàu sang". Vậy nên lánh được danh thì toàn tiết, trước và sau toàn thiện; đó là những điểm sở đắc ở Viên Thông vậy.</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(32) Nhân Tổ:</span> Vua Tống Nhân Tổ (Triệu Trinh), một vị vua nổi tiếng nhân từ, trọng dụng hiền tài thời Bắc Tống.</li>
+                <li><span class="note-num">(33) Chiếu thư (Lục đề xích nhất thư):</span> Thư tay của vua hoặc sắc chỉ của triều đình ban ra.</li>
+                <li><span class="note-num">(34) Hiếu Từ đại già lam:</span> Một ngôi chùa lớn mang tên Hiếu Từ (từ "Già lam" là phiên âm từ tiếng Phạn Sangharama, chỉ ngôi chùa).</li>
+                <li><span class="note-num">(35) Đại danh (大名):</span> Danh tiếng quá lớn. Người xưa cho rằng "đại danh" thường đi kèm với tai ương hoặc áp lực khó duy trì lâu dài, người tu hành thường tránh xa.</li>
+                <li><span class="note-num">(36) Đông Pha:</span> Tức Tô Thức (Tô Đông Pha), đại thi hào, đại văn hào lỗi lạc đời Tống. Ông là bạn thân của nhiều vị thiền sư và rất am hiểu Phật học.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
