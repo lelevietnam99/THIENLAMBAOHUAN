@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư đáp Công Phụ (Số 40) - Đạo & Nhân</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Hằng" (恒) */
+        .container::after {
+            content: "恒";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Thư đáp Công Phụ</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            白雲曰：道之隆替豈常哉，在人弘之耳。故曰：「操則存，捨則亡」，然非道去人，而人去道也。古之人處山林，隱朝市，不牽於名利，不惑於聲色，遂能聲震一時，美流萬世，豈古之可為，今之不可為也。由教之未至，行之不力耳。或謂：「古人純樸故可教，今人浮薄故不可教」。斯實蠱惑之言，誠不足稽也。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Bạch Vân viết: Đạo chi long thế khởi thường da, tại nhân hoằng chi nhĩ. Cố viết: "Thao tắc tồn, xả tắc vong", nhiên phi đạo khứ nhân, nhi nhân khứ đạo dã. Cổ chi nhân xử sơn lâm, ẩn triều thị, bất khiên ư danh lợi, bất hoặc ư thanh sắc, toại năng thanh chấn nhất thời, mỹ lưu vạn thế, khởi cổ chi khả vi, kim chi bất khả vi dã. Do giáo chi vị chí, hành chi bất lực nhĩ. Hoặc vị: "Cổ nhân thuần phác cố khả giáo, kim ngân phù bạc cố bất khả giáo". Tư thực cổ hoặc chi ngôn, thành bất túc kê dã.
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Bạch Vân nói: Sự thịnh suy của đạo đâu phải là lẽ thường, mà đều tại chỗ người hoằng đạo vậy.</p>
+            <p>Nêu có câu: <span style="color:#d4af37">"Gìn giữ thời còn, buông bỏ thời mất"</span><sup>125</sup>. Nhưng không phải đạo bỏ người, mà chỉ vì người bỏ đạo vậy. Người đời xưa ở nơi núi rừng, ẩn dật chốn triều thị, chẳng màng chí danh lợi, chẳng hoặc bởi thanh sắc, tiếng trong sạch mới hay chấn động một thời, cái đẹp mới lưu lại muôn thuở, lẽ đâu người đời xưa làm được mà người đời nay lại không thể làm được như vậy ư!</p>
+            <p>Đó chỉ là do chỗ giáo hóa chưa chín mùi, chỗ làm đạo không hết sức vậy. Hoặc có kẻ bảo rằng: "Người thời xưa thì thuần phác nên hay giáo hóa, còn người đời nay thì phù bạc nên không thể dạy bảo". Nói như thế chính là lời cổ hoặc quần chúng thật không đủ tin vậy.</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(125) Thao tắc tồn, xả tắc vong:</span> Trích từ sách Mạnh Tử, ý nói đạo đức cần phải luôn giữ gìn, lơ là một chút là mất ngay.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
