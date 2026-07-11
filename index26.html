@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Phù Sơn Thực Lục (Số 26) - Trị Tâm</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Tâm" (心) */
+        .container::after {
+            content: "心";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Phù Sơn Thực Lục</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            遠公謂演首座曰：心為一身之主，萬行之本。心不妙悟，妄情自生，妄情既生，見理不明，見理不明是非謬亂。所以治心須求妙悟。悟則神和，氣靜，容敬，色莊，妄想情慮皆融為真心矣。以此治心，心自靈妙，然後導物止迷，孰不從化。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Viễn Công vị Diễn Thủ Tọa viết: Tâm vi nhất thân chi chủ, vạn hạnh chi bản. Tâm bất diệu ngộ, vọng tình tự sinh, vọng tình ký sinh, kiến lý bất minh, kiến lý bất minh thị phi mậu loạn. Sở dĩ trị tâm tu cầu diệu ngộ. Ngộ tắc thần hòa, khí tĩnh, dung kính, sắc tráng, vọng tưởng tình lự giai dong vi chân tâm hỹ. Dĩ thử trị tâm, tâm tự linh diệu, nhiên hậu đạo vật chỉ mê, thục bất tòng hóa.
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Viễn Công bảo <span style="color:#d4af37">Diễn Thủ Tọa</span><sup>89</sup> rằng: Tâm là chủ một thân, làm gốc cho muôn hạnh. Tâm chẳng diệu ngộ thời vọng tình tự sinh, vọng tình đã sinh thời thấy lý không tỏ rõ, thấy lý chẳng tỏ rõ thì phải lầm lẫn rối loạn.</p>
+            <p>Sở dĩ muốn trị tâm cần phải mong cầu diệu ngộ. Ngộ thời thần hòa, khí tĩnh, dung mạo đáng kính, sắc diện trang nghiêm, vọng tưởng tán loạn đều dung làm chân tâm. Trị tâm như thế thời tâm tự linh diệu, sau đó mới đem ra chỉ đạo cho kẻ mê lầm, thời ai lại chẳng theo chỗ giáo hóa.</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(89) Diễn Thủ Tọa:</span> Vị hòa thượng giữ chức Thủ tọa (đứng đầu các tăng chúng trong thiền đường) nhận lời dạy này từ Viễn Công.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Cửu Phong Tập (Số 11) - Học Vấn</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Học" (學) */
+        .container::after {
+            content: "學";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cửu Phong Tập</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            大覺蓮和尚曰：玉不琢不成器，人不學不知理。今之所以知古，後之所以知前。善者可以為法，惡者可以為戒。歷觀前輩立身揚名於當世者，鮮不學問而成就之矣。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Đại Giác Liên Hòa thượng viết: Ngọc bất trác bất thành khí, nhân bất học bất tri lý. Kim chi sở dĩ tri cổ, hậu chi sở dĩ tri tiên. Thiện giả khả dĩ vi pháp, ác giả khả dĩ vi giới. Lịch quan tiền bối lập thân dương danh ư đương thế giả, tiển bất học vấn nhi thành chi hỹ.
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Đại Giác Liên Hòa thượng nói: Ngọc chẳng dũa thời không thành đồ dùng, người chẳng học thời không biết đạo lý. Nay sở dĩ biết được xưa<sup>46</sup>, sau sở dĩ biết được trước.</p>
+            <p>Điều thiện thì đáng được bắt chước, điều ác thì lấy giới làm răn. Các bậc tiền bối nối tiếp nhau lập thân dương danh ở đương thời, ít có ai chẳng nương vào học vấn mà thành tựu.</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(46) Nay sở dĩ biết được xưa:</span> Ý nói nhờ có sách vở, nhờ sự học hỏi lịch sử (tri thức của người đi trước) mà người đời sau hiểu rõ đạo lý của người xưa để lại, lấy đó làm gương soi rọi cho hiện tại.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

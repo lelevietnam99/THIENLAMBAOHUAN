@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Cửu Phong Tập (Số 15) - Nhân Duyên</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Duyên" (緣) */
+        .container::after {
+            content: "緣";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cửu Phong Tập</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            雲居舜和尚，字老夫，住廬山棲賢日，以郡守槐都官私忿，累橫逆民其衣。往京師訪大覺。至舒陽，阻雪旅邸。一夕有客，攜二僕破雪而至，見老夫如舊識，已而易衣拜於前。老夫問之。客曰：「昔在洞山，隨師荷擔，即漢陽幹僕宋榮也」。老夫共語籌昔，客嗟歎之久。淩晨備飯贈白金五兩，仍換一僕。客曰：「此兒來往京城熟矣，道路艱關備悉，師行固無慮乎」。老夫由是得達輦下，推此益知其兩人平昔所存矣。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Vân Cư Thuấn Hòa thượng, tự Lão Phu, trụ Lư Sơn Thê Hiền nhật, dĩ quận thú Hòe Đô quan tư phẫn, lụy hoành nghịch dân kỳ y. Vãng kinh đô phỏng Đại Giác, Chí Sơn Dương, trở tuyết lữ tể. Nhất tịch hữu khách, huề nhị bộc phá tuyết nhi chí, kiến Lão Phu như cựu thức, dĩ nhi dịch y bái ư tiền. Lão Phu vấn chi. Khách viết: "Tích tại Đổng Sơn, tùy sư hà đảm, chi Hán Dương Cán Bộc Tống Vinh dã". Lão Phu cộng ngữ trù tích, khách ta thán chi cửu. Lăng thần bị phạn tặng bạch kim ngũ lạng, nhưng hoán nhất bộc. Khách viết: "Thử nhi lai vãng kinh thành xác hỹ, đạo đồ gián quan bị tất, sư hành cố vô lư hồ". Lão Phu do thị đắc đạt liễn hạ, suy thử ích tri kỳ nhị nhân bình tích sở tồn hỹ.
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Vân Cư Thuấn Hòa thượng, tên chữ là Lão Phu, ngày còn trụ trì chùa Thê Hiền ở Lư Sơn, vì có mối tư oán với quan quận thú Hòe Đô, nên bị cưỡng bách phải hoàn tục.</p>
+            <p>Ngài sau đó tới kinh đô thăm Đại Giác Hòa thượng, khi đến đất <span style="color:#d4af37">Sơn Dương</span><sup>62</sup>, bị tuyết làm ngăn trở, nên phải ở trọ một <span style="color:#d4af37">lữ quán</span><sup>63</sup>. Vào một buổi chiều, có một người khách đem theo hai người hầu phá con đường tuyết mà tới, chợt thấy Lão Phu như là người quen biết cũ. Rồi ông khách thay áo tới trước thi lễ. Lão Phu liền hỏi nguyên do.</p>
+            <p>Người khách đáp: "Tôi trước thường theo hầu thầy ở Đổng Sơn, tên là Cán Bộc Tống Vinh ở Hán Dương vậy". Người khách cùng với Lão Phu cùng nhau kể chuyện cũ tới khuya. Sáng hôm sau người khách lại làm cơm thết đãi, tặng Lão Phu năm lạng bạc, còn gọi một người hầu tới. Rồi người khách nói: "Đứa trẻ này thường hay lui tới kinh thành, biết tất cả đoạn đường gian nan nguy hiểm, nay cho đi đưa đường, xin thầy an tâm chớ lo ngại".</p>
+            <p>Vì thế mà Lão Phu tới được chốn <span style="color:#d4af37">Kinh thành</span><sup>64</sup>. Xét như vậy, thì cái lợi ích về chỗ quen biết xưa kia của hai người thật là thắm thiết.</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(62) Sơn Dương:</span> Một địa danh xưa, nơi có trạm dừng chân cho khách bộ hành.</li>
+                <li><span class="note-num">(63) Lữ quán:</span> Nhà trọ của người đi đường thời xưa.</li>
+                <li><span class="note-num">(64) Kinh thành:</span> Kinh đô của triều đình, nơi vua ở, cũng là nơi Đại Giác Hòa thượng đang trụ trì.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

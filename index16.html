@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Cửu Phong Tập (Số 16) - Tự Lập</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Cần" (勤) */
+        .container::after {
+            content: "勤";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cửu Phong Tập</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            大覺曰：舜老夫賦性簡直，不識權衡化食等事。日有定課，曾不少易。雖執燈掃地，皆躬為之。常曰：「古人有一日不作一日不食」之戒，余何人也。雖垂老其志益堅。或曰：「何不使左右人」。老夫曰：「經涉寒暑，起坐無常，不欲勞之」。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Đại Giác viết: Thuấn Lão Phu phú tính thì giản trực, bất thức quyền hành hóa thực đẳng sự. Nhật hữu định khóa, tằng bất thiểu dịch. Tuy chấp đăng tảo địa, giai cung vi chi. Thường viết: "Cổ nhân hữu nhất nhật bất tác nhất nhật bất thực" chi giới, dư hà nhân dã. Tuy thùy lão kỳ chí ích kiên. Hoặc viết: "Hà bất sử tả hữu nhân". Lão phu viết: "Kinh thiệp hàn thử, khởi tọa bất thường, bất dục lao chi".
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Đại Giác nói: Thuấn Lão Phu phú tính thì giản dị và trung thực, không biết mọi việc <span style="color:#d4af37">quyền hành hóa thực</span><sup>65</sup>. Hằng ngày có định khóa, từng không thay đổi thời khắc nào, tuy là những việc thắp đèn quét đất cũng đều tự mình làm lấy.</p>
+            <p>Ngài thường nói: "Cổ nhân đều có răn dạy <span style="color:#d4af37">một ngày chẳng làm thời một ngày chẳng ăn</span><sup>66</sup>. Vậy ta là người thế nào vậy?" Ta tuy tuổi đã già, nhưng chí đó cần phải bền chắc.</p>
+            <p>Hoặc có người nói: "Tại sao không sai khiến người thân cận". Lão Phu nói: "Bạt thiệp nóng lạnh, đứng ngồi bất thường, nên chẳng muốn phiền nhọc họ".</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(65) Quyền hành hóa thực:</span> Những việc mang tính chất hành chính, quản lý tài sản, của cải (hóa thực) hoặc những công việc đối nội đối ngoại cần sự dàn xếp, tính toán lợi ích. Thuấn Lão Phu là bậc chân tu nên không màng đến những việc thế tục này.</li>
+                <li><span class="note-num">(66) Một ngày chẳng làm, một ngày chẳng ăn:</span> Câu nói nổi tiếng của Thiền sư Bách Trượng Hoài Hải, khẳng định tinh thần tự lập và sự lao động của người tu hành.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

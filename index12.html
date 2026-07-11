@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Đàm Tân Tập (Số 12) - Lý Diệu Đạo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Thời" (時) */
+        .container::after {
+            content: "時";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.45em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Đàm Tân Tập</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            明教曰：妙道之理，聖人常寓之於易。至周衰先王之法壞，禮義亡，然後其言異術降出而亂俗。迨我釋迦入中土，專以第一義諦示人而始末設為慈悲以化群生，亦所以趨時也。自生民以來，純樸未散，則三皇之教，簡而素春也。及情竇日鑿，則五帝之教詳而文夏也。時與世異，情隨日遷，故三王之教密而嚴秋也。昔商周之誥、誓，後世學者固有不能曉，比當時之民聽之而不違，則俗與今如何也。及其弊而為秦漢也，則無所不至矣。固然天下有無願聞者。於是我佛如來一推之，以性命之理東也。天有四時循環以生成萬物，聖人設教，迭相扶持，以化成天下，亦由是而已矣。然至其極也，皆不能無弊。弊者積也。要當有聖賢者，世起而救之。自秦漢以來，千有餘載，風俗靡靡愈薄。聖人之教，裂而鼎立互相抵牾，大道寥寥莫之反，良可歎也。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Minh Giáo viết: Diệu đạo chi lý, Thánh nhân thường ngụ chi ư Dịch. Chí Chu suy tiên vương chi pháp hoại, lễ nghĩa vong, nhiên hậu kỳ ngôn dị thuật giáng xuất nhi loạn tục. Đãi ngã Thích Ca nhập Trung thổ, chuyên dĩ Đệ nhất nghĩa đế thị nhân nhi thủy mạt thiết vi từ bi dĩ hóa quần sanh, diệc sở dĩ xu thời dã. Tự sinh dân dĩ lai, thuần phác vị tán, tắc Tam Hoàng chi giáo, giản nhi tố Xuân dã. Cập tình đậu nhật tạc, tắc Ngũ Đế chi giáo tường nhi văn Hạ dã. Thời dữ thế dị, tình tùy nhật thiên, cố Tam vương chi giáo mật nhi nghiêm Thu dã. Tích Thương Chu chi cao thệ, hậu thế học giả cố hữu bất năng hiểu, tỷ đương thời chi dân thính chi nhi bất vi, tắc tục dữ kim như hà dã. Cập kỳ tệ nhi vi Tần Hán dã, tắc vô sở bất chi hỹ. Cố nhiên thiên hạ hữu bất nhẫn nguyện văn giả. Ư thị ngã Phật Như Lai nhất suy chi, dĩ tính mệnh chi lý Đông dã. Thiên hữu tứ thời tuần hoàn dĩ sinh thành vạn vật, Thánh nhân thiết giáo, điệt tương phù trì, dĩ hóa thành thiên hạ, diệc do thị nhi dĩ hỹ. Nhiên chí kỳ cực dã, giai bất năng vô tệ. Tệ giả tích dã. Yếu đương hữu Thánh hiền giả, thế khởi nhi cứu chi. Tự Tần Hán dĩ lai, thiên hữu dư tải, phong tục my my du bạc. Thánh nhân chi giáo, liệt nhi đỉnh lập hỗ tương để tý, đại đạo liêu liêu mạc chi phản, lương khả thán dã.
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Đại Giác Hòa thượng nói: Cái lý của <span style="color:#d4af37">diệu đạo</span><sup>47</sup>, Thánh nhân thường ngụ ở <span style="color:#d4af37">Dịch</span><sup>48</sup>. Đời nhà Chu suy, thời pháp của tiên vương hoại, lễ nghĩa mất. Sau đó những kỳ ngôn dị thuật đua nhau xuất hiện mà phong tục loạn.</p>
+            <p>Kịp đến lúc đạo của Phật Thích Ca ta du nhập <span style="color:#d4af37">Trung thổ</span><sup>49</sup>, thuần đem <span style="color:#d4af37">Đệ nhất nghĩa đế</span><sup>50</sup> để dạy đời, trước sau thuyết giáo đều lấy Từ bi để tiếp hóa quần sanh, đó cũng chỉ là tùy theo ở thời thế vậy. Từ lúc có sinh dân trở lại, tính thuần phác chưa tan, thời cái giáo của <span style="color:#d4af37">Tam Hoàng</span><sup>51</sup> giản dị mà tố phác, đó là mùa Xuân vậy.</p>
+            <p>Đến lúc tâm tình mỗi ngày một mỏng, cái giáo của <span style="color:#d4af37">Ngũ Đế</span><sup>52</sup> tường tận mà văn vẻ, đó là mùa Hạ. Thời cùng thế khác nhau, tình cũng theo đó mà ngày một thay đổi, nên cái giáo của <span style="color:#d4af37">Tam Vương</span><sup>53</sup> mật mà nghiêm, đó là mùa Thu.</p>
+            <p>Các bài <span style="color:#d4af37">Cáo, Thệ</span><sup>54</sup> của Thương, Chu xưa kia, người học ở đời sau cũng còn chẳng hiểu, thế nhưng dân đương thời nghe theo mà không trái. Nếu đem so sánh thời biết cái phong tục giữa xưa và nay như thế nào rồi vậy!</p>
+            <p>Cho đến đời nhà Tần, nhà Hán, thời cái tệ đó thật quá sâu rộng, đến nỗi người trong thiên hạ có chỗ chẳng còn muốn nghe. Bởi thế đức Phật Như Lai ta xét sự kiện ấy mà dạy cho cái <span style="color:#d4af37">lý tính mệnh</span><sup>55</sup>, đó là mùa Đông vậy. Trời có bốn mùa tuần hoàn để sanh thành vạn vật. Thánh nhân đặt ra giáo lý phù trì lẫn cho nhau để hóa thành thiên hạ, cũng chỉ bởi thế thôi. Nhưng cái gì đã đến chỗ cùng cực, thời không thể tránh khỏi cái tệ thoái trào. Cho nên lại cần có những bậc Hiền thánh xuất hiện ở đời để cứu cái tệ đó. Từ nhà Tần, nhà Hán trở lại, trải qua hàng ngàn năm, phong tục ngày càng phai lạt. Giáo lý của Thánh nhân thì phân liệt, rồi đua nhau thiết lập, chê trách lẫn nhau, không thể nào trở lại được đạo lớn mênh mang, thực đáng tiếc vậy.</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(47) Diệu đạo:</span> Con đường huyền diệu, chân lý tối cao.</li>
+                <li><span class="note-num">(48) Dịch:</span> Kinh Dịch, nền tảng của triết học cổ phương Đông.</li>
+                <li><span class="note-num">(49) Trung thổ:</span> Trung Hoa, đất nước Trung Quốc.</li>
+                <li><span class="note-num">(50) Đệ nhất nghĩa đế:</span> Chân lý tối thượng trong Phật giáo.</li>
+                <li><span class="note-num">(51-53) Tam Hoàng, Ngũ Đế, Tam Vương:</span> Các vị vua thánh thời cổ đại Trung Hoa, đại diện cho các thời kỳ giáo hóa khác nhau của Thánh nhân.</li>
+                <li><span class="note-num">(54) Cáo, Thệ:</span> Các văn bản hành chính, văn tế, tuyên ngôn của các triều đại Thương, Chu (có trong Kinh Thư).</li>
+                <li><span class="note-num">(55) Lý tính mệnh:</span> Lý lẽ về bản tính và mệnh sống, tư tưởng trọng tâm của Phật giáo khi truyền vào Trung Hoa.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
