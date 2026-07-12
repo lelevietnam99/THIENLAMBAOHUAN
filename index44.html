@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trạm Đường Ký Văn (Số 44) - Biết Cơ Vi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Cơ" (機) */
+        .container::after {
+            content: "機";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Trạm Đường Ký Văn</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            白雲初住九江承天，次遷圓通，年齒甚少。時晦堂在寶峰，謂月公晦曰：「新圓通洞徹見源，不忝楊岐之嗣，惜乎發用太早，非叢林福」。公晦因問其故。晦堂曰：「功名美器，造物惜之，不與人全，人固欲之天必奪之」。待白雲終於徐之海會，方五十六歲。識者謂：「晦堂知機微，真哲人矣」。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Bạch Vân sơ trụ Cửu Giang Thừa Thiên, thứ thiên Viên Thông, niên xỉ thậm thiểu. Thời Hối Đường tại Bảo Phong, vị Nguyệt Công Hối viết: Tân Viên Thông đỗng triệt kiến nguyên, bất thiểm Dương Kỳ chi tự, tích hồ phát dụng thái tảo, phi tùng lâm phúc. Công Hối nhân vấn kỳ cố. Hối Đường viết: "Công danh mỹ khí, tạo vật tích chi, bất dữ nhân toàn, nhân cố dục chi thiên tất đoạt chi". Đãi Bạch Vân chung vu thư chi Hải Hội, phương ngũ thập lục tuế. Thức giả vị: "Hối Đường tri cơ vi, chân triết nhân hỹ".
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Bạch Vân lúc đầu ở chùa Thừa Thiên thuộc Cửu Giang, sau dời về chùa Viên Thông, tuổi đời còn rất nhỏ. Khi bấy giờ Hối Đường<sup>131</sup> ở Bảo Phong, bảo Nguyệt Công Hối<sup>132</sup> rằng: "Tân Viên Thông là người thấu triệt được <span style="color:#d4af37">kiến nguyên</span><sup>133</sup>, thực chẳng hổ là pháp tự của Dương Kỳ, chỉ tiếc là <span style="color:#d4af37">ra ứng cơ</span><sup>134</sup> quá sớm nên chẳng phải là phúc của tùng lâm".</p>
+            <p>Công Hối nhân hỏi về nguyên cớ. Hối Đường nói: "Cái mỹ khí của công danh, tạo vật đều tiếc, chẳng để trọn vẹn cho con người, nếu người cố tâm muốn có nó, thì trời tất nhiên sẽ cướp đi".</p>
+            <p>Cuối cùng Bạch Vân mất ở chùa Hải Hội, thuộc Từ Châu vừa vặn năm mươi sáu tuổi. Người thức giả thường bảo rằng: "Hối Đường chẳng những chỉ biết về thời cơ mà còn biết tới chỗ vi tế nữa, quả là một triết nhân vậy".</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(131) Hối Đường:</span> Thiền sư Hối Đường Tổ Tâm.</li>
+                <li><span class="note-num">(132) Nguyệt Công Hối:</span> Một vị thiền tăng cùng thời.</li>
+                <li><span class="note-num">(133) Kiến nguyên:</span> Nguồn gốc của trí tuệ, sự thấu suốt chân lý.</li>
+                <li><span class="note-num">(134) Ra ứng cơ:</span> Ra đời làm trụ trì, hoằng hóa.</li>
+                <li><span class="note-num">(135) Trạm Đường Ký Văn:</span> Tác phẩm ghi chép lại những lời bàn luận về các vị thiền sư.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

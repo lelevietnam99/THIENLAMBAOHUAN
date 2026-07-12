@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Độn Am Ký (Số 48) - Thận Dụng Nhân</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Thận" (慎) */
+        .container::after {
+            content: "慎";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Độn Am Bích Ký</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            晦堂一日見黃龍有不豫之色，因逆問之。黃龍曰：「監收未得人」。晦堂遂進感副寺。黃龍曰：「感尚暴，恐為小人所謀」。晦堂曰：「化侍者稍廉謹」。黃龍謂：「化雖廉謹不若秀藏主有量而忠」。靈源常問晦堂：「黃龍用一監收，何過慮如是」。晦堂曰：「有國有家者，未嘗不本此，豈特黃龍為然，先聖亦嘗戒之」。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Hối Đường nhất nhật kiến Hoàng Long hữu bất dự chi sắc, nhân nghịch vấn chi. Hoàng Long viết: "Giám thu vị đắc nhân". Hối Đường toại tiến Cảm Phó tự. Hoàng Long viết: "Cảm thượng bạo, khủng vi tiểu nhân sở mưu". Hối Đường viết: "Hóa Thị giả sảo liêm cẩn". Hoàng Long vị: "Hóa tuy liêm cẩn bất nhược Tú Tạng Chủ hữu lượng nhi trung". Linh Nguyên thường vấn Hối Đường: "Hoàng Long dụng nhất giám thu, hà quá lự như thử". Hối Đường viết: "Hữu quốc hữu gia giả, vị thường bất bản thử, khởi đặc Hoàng Long vi nhiên, tiên thánh diệc tằng giới chi".
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Một bữa Hối Đường thấy Hoàng Long<sup>143</sup> có sắc mặt chẳng vui, nhân thế mới hỏi duyên cớ. Hoàng Long nói: "Chưa tìm được người giám thu<sup>144</sup>". Hối Đường bèn tiến cử Cảm Phó Tự<sup>145</sup>.</p>
+            <p>Hoàng Long nói: "Cảm còn thô bạo, sợ bị kẻ tiểu nhân mưu hại". Hối Đường nói: "Hóa Thị giả<sup>146</sup> là người liêm cẩn<sup>147</sup>". Hoàng Long bảo: "Hóa tuy liêm cẩn nhưng lại không bằng Tú Tạng Chủ<sup>148</sup>, có lượng mà trung thành".</p>
+            <p>Linh Nguyên<sup>149</sup> thường hỏi Hối Đường rằng: "Hoàng Long dùng một người giám thu, tại sao quá lo lắng như thế". Hối Đường nói: "Có nước có nhà ai chẳng lấy việc đó làm gốc, chẳng những Hoàng Long làm như thế, mà các bậc Tiên thánh cũng từng cảnh giới việc này".</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(143) Hoàng Long:</span> Thiền sư Hoàng Long Tuệ Nam.</li>
+                <li><span class="note-num">(144) Giám thu:</span> Người quản lý tài sản, thu chi trong chùa.</li>
+                <li><span class="note-num">(145) Cảm Phó Tự:</span> Một vị tăng giữ chức vụ Phó Tự.</li>
+                <li><span class="note-num">(146) Hóa Thị giả:</span> Vị thị giả họ Hóa.</li>
+                <li><span class="note-num">(147) Liêm cẩn:</span> Liêm khiết và cẩn thận.</li>
+                <li><span class="note-num">(148) Tú Tạng Chủ:</span> Vị Tạng Chủ tên Tú.</li>
+                <li><span class="note-num">(149) Linh Nguyên:</span> Thiền sư Linh Nguyên Duy Thanh.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

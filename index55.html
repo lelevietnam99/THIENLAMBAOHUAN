@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lâm Gian Lục (Số 55) - Sự Buông Bỏ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Xả" (捨) */
+        .container::after {
+            content: "捨";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Lâm Gian Lục</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            黃龍南和尚曰：余昔同文悅，遊湖南，見衲子擔籠行腳者，悅驚異縮謁，已而下曰：「居家閨閤中物，不肯放下，反累閤他人擔分，無乃太勞乎」。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Hoàng Long Nam Hòa thượng viết: Dư tích đồng Văn Duyệt, du Hồ Nam, kiến nột tử đảm lung hành cước giả, Duyệt kinh dị súc át, dĩ nhi hạ viết: "Tụ gia khuê cáp trung vật, bất khẳng phóng hạ, phản lụy cáp tha nhân đảm phân, vô nãi thái lao hồ.
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Hoàng Long Nam<sup>159</sup> Hòa thượng nói: "Ta trước kia cùng Văn Duyệt vân du ở Hồ Nam, thấy kẻ nột tử mang lung<sup>160</sup> đi hành cước<sup>161</sup>.</p>
+            <p>Duyệt kinh dị, nhăn mặt châu mày mắng rằng: 'Vật trong nơi khuê cáp<sup>162</sup> ở chính trong nhà mình mà chẳng chịu bỏ đi, lại phiền lụy đến phần gánh của người khác, thật quả là quá mệt nhọc vậy'."</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(159) Hoàng Long Nam:</span> Thiền sư Hoàng Long Tuệ Nam.</li>
+                <li><span class="note-num">(160) Lung:</span> Cái giỏ, cái rương đựng đồ đạc.</li>
+                <li><span class="note-num">(161) Hành cước:</span> Đi vân du học đạo.</li>
+                <li><span class="note-num">(162) Khuê cáp:</span> Chỉ những thứ riêng tư, ích kỷ trong tâm mỗi người.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
