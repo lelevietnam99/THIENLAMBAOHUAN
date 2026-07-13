@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sơn Đường Tiểu Sam (Số 72) - Bổn Phận Trụ Trì</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Trách" (責) */
+        .container::after {
+            content: "責";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.4em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sơn Đường Tiểu Sam</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            真淨舉廣道者住五峰，輿議廣，素拙無應世才。迨廣住持，精以治己，寬以臨眾，未幾百廢俱舉，衲子往來競傳喧。真淨聞之曰：「學者何易毀譽耶」。余每見叢林竊議曰：「那個長老行道安眾，那個長老不侵用常住，與眾同甘苦」。夫稱善知識，為日寺之主，行道安眾，不侵常住，與眾甘苦，固當為之，又何足道。如士大夫做官，為國安民，乃曰：「我不受贓，不擾民」。且不受贓，不擾民，豈分外事耶。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Chân Tịnh cử Quảng Ðạo Giả trụ trì Ngũ Phong. Dư nghị Quảng, sơ truyết vô ứng thế tài. Ðãi Quảng trụ trì, tinh dĩ trị kỷ, khoan dĩ lâm chúng, vị kỷ bách phế cụ cử, nột tử vãng lai cạnh tranh huyên truyền. Chân Tịnh Văn chi viết: "Học giả hà dị hủy dự da". Dư mỗi kiến tùng lâm thiết nghị viết: "Na cá Trưởng lão hành đạo an chúng, na cá trưởng lão bất xâm dụng thường trụ, dữ chúng đồng cam khổ". Phù xưng thiện tri thức, vi nhật tự chi chủ, hành đạo an chúng, bất xâm thường trụ, dữ chúng cam khổ, cố đương vi chi, hựu hà túc đạo. Như sĩ đại phu tố quan, vị quốc an dân, nãi viết: "Ngã bất thụ tang, bất nhiễu dân". Thả bất thụ tang, bất nhiễu dân, khởi phận ngoại sự da.
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Chân Tịnh cử Quảng Đạo Giả<sup>197</sup> trụ trì chùa Ngũ Phong. Dư luận cho rằng, Quảng là người vụng về, không có tài ứng thế. Kịp tới lúc Quảng trụ trì, thì tinh tiến để sửa mình, khoan hồng để xét chúng. Chưa bao lâu mà hàng trăm việc đình trệ đều được tiến hành. Kẻ nột tử đi lại tấp nập, náo nhiệt tuyên truyền. Chân Tịnh nghe biết thế và nói: "Người học sao lại khen chê dễ dàng quá vậy".</p>
+            <p>Ta mỗi khi thấy chốn tùng lâm, có người bàn lén rằng: "Vị Trưởng lão này thì hành đạo an chúng, vị Trưởng lão này chẳng lạm dụng của thường trụ, cùng với chúng đồng chịu khổ". Ôi! Xưng là bậc thiện tri thức, làm chủ một ngôi chùa, hành đạo an chúng, chẳng lạm dụng của thường trụ, cùng với chúng đồng chịu cam khổ, cố nhiên là việc phải làm, lại còn gì để phải nói hơn.</p>
+            <p>Như kẻ sĩ đại phu làm quan, vì nước an dân, liền nói rằng: "Ta không nhận của hối lộ, chẳng sách nhiễu dân". Vậy việc không nhận hối lộ, không sách nhiễu dân, đâu phải là ngoài phận sự vậy ư!</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(197) Quảng Đạo Giả:</span> Thiền sư Quảng Đạo.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
