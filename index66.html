@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quảng Lục (Số 66) - Khiêm Cung Đạo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Khiêm" (謙) */
+        .container::after {
+            content: "謙";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Quảng Lục</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            寶峰安和尚曰：諸方老宿，批判先覺語言，拈提、公案，猶如捧土培泰山，掬水沃東海。然彼豈耐此以為高深耶。觀其志在益之，而不自知非其當也。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Bảo Phong Anh Hòa thượng viết: Chư phương lão túc, phê phán tiên giác ngữ ngôn, niêm đề, công án, do như phủng thổ bồi Thái sơn, cúc thủy ốc Ðông hải. Nhiên bỉ khởi nại thử dĩ vi cao thâm da? Quan kỳ chí tại ích chi, nhi bất tự tri phi kỳ đáng dã.
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Bảo Phong Anh Hòa thượng nói: "Các bậc lão túc khắp nơi, có những niêm đề, công án<sup>185</sup> để phê phán về lời nói của các bậc tiên giác, đó chẳng qua như người bưng đất đắp Thái Sơn, vúc nước tưới biển Đông hải.</p>
+            <p>Song các ngài há lại cậy vào đó để làm cao sâu vậy ư! Căn cứ vào chí của mình thì đó là ích, nhưng lại chẳng tự biết, đó chẳng phải là thỏa đáng vậy".</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(185) Công án: </span>Các câu chuyện hoặc đối đáp của chư Tổ dùng để tham thiền.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long Sơn Quảng Lục (Số 60) - Tích Lũy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Tích" (積) */
+        .container::after {
+            content: "積";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Long Sơn Quảng Lục</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            黃龍謂隱士潘延之曰：「聖賢之學，非造次可成，須在積累。積累之要，唯專與勤。屏絕嗜好，行之勿倦，然後曠而充之，可盡天下之妙」。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Hoàng Long vị ẩn sĩ Phan Diên Chi viết: Thánh hiền chi học, phi tạo thứ khả thành, tu tại tích lũy. Tích lũy chi yếu, duy chuyên dữ cần. Bình tuyệt thị hiếu, hành chi vật quyện, nhiên hậu khoáng nhi sung chi, khả tận thiên hạ chi diệu.
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Hoàng Long bảo ẩn sĩ Phan Diên Chi<sup>174</sup> rằng: "Cái học của Thánh hiền, không thể thành tựu ngay được mà cần phải tích lũy.</p>
+            <p>Cái yếu của tích lũy, duy ở chỗ chuyên và cần. Trừ khử lòng thị hiếu, thực hành không biết mỏi, vậy sau mới mở mang rộng rãi ra, thì có thể hết được cái diệu trong thiên hạ".</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(174) Phan Diên Chi:</span> Một vị ẩn sĩ có danh tiếng, thường lui tới học đạo.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

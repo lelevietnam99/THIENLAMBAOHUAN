@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Độn Am Bích Ký (Số 64) - Đạo Vô Biến</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Chân" (真) */
+        .container::after {
+            content: "真";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Độn Am Bích Ký</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            黃龍曰：古之天地日月，同今之天地日月。古之萬物性情，同今之萬物性情。天地日月，固無易也，萬物性情固無變也，道何為而獨變乎。嗟其未至者，厭故悅新，捨此取彼，如適越者，不之南而之北，誠可謂異於人矣。然徒勞其心，苦其身，其志愈勤，其道愈遠矣。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Hoàng Long viết: Cổ chi thiên địa nhật nguyệt, do kim chi thiên địa nhật nguyệt. Cổ chi vạn vật tính tình, do kim chi vạn vật tính tình. Thiên địa nhật nguyệt, cố vô dịch dã, vạn vật tính tình cố vô biến dã, đạo hồ vi nhi độc biến hồ. Ta kỳ vị chí giả, yếm cố duyệt tân, xả thử thủ bỉ, do thích Việt giả, bất chi nam nhi chi bắc, thành khả vị dị ư nhân hỹ. Nhiên đồ lao kỳ tâm, khổ kỳ thân, kỳ chỉ du cần, kỳ đạo du viễn hỹ.
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Hoàng Long nói<sup>183</sup>: "Trời đất, mặt trời mặt trăng ở thời xưa, cũng như trời đất, mặt trời mặt trăng ở thời nay. Tính tình vạn vật ở thời xưa, cũng như tính tình vạn vật ở thời nay.</p>
+            <p>Trời đất, mặt trời mặt trăng thì cố định không đổi. Tính tình của muôn vật cũng cố định không biến. Tại sao riêng có đạo biến đổi được vậy ư! Đáng buồn cho người chưa đến được đạo, chỉ chán cũ vui mới, bỏ cái này lấy cái kia, cũng giống như người đi về đất Việt<sup>184</sup>, chẳng đi về phía nam mà đi về phía bắc, đó bảo là khác người vậy.</p>
+            <p>Như thế, chỉ luống nhọc lòng họ, khổ thân họ, chí của họ càng siêng, nhưng cái đạo đó lại càng xa vậy".</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(183) Hoàng Long nói:</span> Lời răn về sự kiên định với chân lý.</li>
+                <li><span class="note-num">(184) Người đi về đất Việt:</span> Điển tích về người muốn đi phương Nam nhưng lại đi nhầm về phía Bắc (càng đi càng xa mục đích).</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

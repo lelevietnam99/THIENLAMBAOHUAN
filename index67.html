@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bích Ký (Số 67) - Cảnh Tỉnh Nhân Quả</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Giới" (戒) */
+        .container::after {
+            content: "戒";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bích Ký</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            英紹武每見學者，肆肆不懼因果，嘆息久之曰：「勞生如旅舍，住則隨緣，去則忘矣，彼所得能幾何，爾輩不識廉恥，干犯名分，汙瀆宗教，乃至於此。大丈夫志在恢弘祖道，誘掖後來，不應私善己欲，無所避忌，每一身之禍，造萬劫之殃，三途地獄受苦者，為是苦也，向袈裟下失卻人身，實為苦也」。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Anh Thiệu Võ mỗi kiến học giả, tứ tứ bất cụ nhân quả, thán tức cửu chi viết: "Lao sinh như lữ xá, trụ tắc tùy duyên, khứ tắc vong hỹ, bỉ sở đắc năng kỷ hà, nhĩ bối bất thức liêm sỉ, can phạm danh phận, ô độc tôn giáo, nãi chí như thị. Ðại trượng phu chí tại khôi hoằng tổ đạo, dụ dịch hậu lai, bất ưng tư thiện kỷ dục, vô sở tị kỵ, mỗi nhất thân chi họa, tạo vạn kiếp chi ương, tam đồ địa ngục thụ khổ giả, vi thị khổ dã, hướng ca sa hạ thất khước nhân thân, thực vi khổ dã".
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Anh Thiệu Võ thường thấy người học buông lung chẳng sợ nhân quả. Liền than thở hoài và nói: "Đời người<sup>186</sup> như quán trọ, ở thời tùy duyên, đi thời mất vậy, chỗ sở đắc của họ có được là bao. Lũ các ngươi chẳng biết liêm sỉ, can phạm danh phận, nhơ nhuốc tôn giáo, đến nỗi như thế.</p>
+            <p>Chí của người đại trượng phu là ở chỗ khôi phục hoằng dương cái đạo của Phật Tổ, dẫn dụ kẻ hậu lai. Không nên chuyên chú vào lòng ham muốn riêng mình, không kiêng sợ điều gì, gây cái vạ cho một đời, tạo cái ương cho muôn kiếp. Dù có phải chịu cái khổ ở tam đồ<sup>187</sup> địa ngục cũng chưa phải là khổ, mà hướng dưới tấm ca sa<sup>188</sup> mất thân người mới thật là khổ vậy".</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(186) Đời người:</span> Nguyên văn là "Lao sinh" (đời sống lao nhọc).</li>
+                <li><span class="note-num">(187) Tam đồ:</span> Ba đường ác: địa ngục, ngạ quỷ, súc sinh.</li>
+                <li><span class="note-num">(188) Ca sa:</span> Áo của người xuất gia, tượng trưng cho sự giải thoát.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
