@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bích Ký (Số 74) - Tiết Nghĩa Tỳ Khưu</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Dấu triện - Chữ "Chính" (正) */
+        .container::after {
+            content: "正";
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.07);
+            writing-mode: vertical-rl;
+            pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #c23b22;
+            font-size: 1.15em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid #8b7355;
+            margin-bottom: 25px;
+        }
+
+        .han-viet { font-size: 1.1em; line-height: 1.8; color: #a89f91; font-style: italic; margin-bottom: 30px; }
+        .dich-nghia { font-size: 1.2em; line-height: 1.9; color: #eae0d5; text-align: justify; }
+
+        sup { color: #d4af37; font-weight: bold; }
+
+        .footnotes {
+            margin-top: 45px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            padding-top: 25px;
+            font-size: 0.95em;
+            color: #b5a999;
+        }
+
+        .note-num { color: #d4af37; font-weight: bold; margin-right: 8px; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bích Ký</h1>
+
+        <h2>1. Hán Tự</h2>
+        <div class="han-tu">
+            真淨曰：末法比丘，鮮有節義，每見其高談闊論，自謂人莫能及。迨乎一飯之惠，則始異而終附之，先毀而後譽之。求其是說是，非說非，中正而不隱者少矣。
+        </div>
+
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Chân Tịnh viết: Mạt pháp Tỳ khưu, tiển hữu tiết nghĩa, mỗi kiến kỳ cao đàm khoát luận, tự vị nhân mạc năng cập. Ðãi hồ nhất phạn chi huệ, tắc thủy dị nhi chung phụ chi, tiên hủy nhi hậu dự chi. Cầu kỳ thị viết thị, phi viết phi, trung chính nhi bất ẩn giả thiểu hỹ.
+        </div>
+
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Chân Tịnh nói: "Tỳ khưu thời mạt pháp<sup>202</sup>, ít có người tiết nghĩa. Mỗi khi thấy họ bàn cao luận rộng và tự nói người chẳng ai kịp mình.</p>
+            <p>Tới khi chịu cái ơn của một bữa ăn, thời họ lại cho cái lúc trước kia khác, nhưng sau lại phụ họa theo, trước thì khen đấy rồi sau chê đấy. Còn tìm được người, phải thì nói rằng phải, trái thì nói rằng trái, trung chính mà chẳng che đậy quả thật hiếm vậy".</p>
+        </div>
+
+        <div class="footnotes">
+            <h3>Chú thích</h3>
+            <ul>
+                <li><span class="note-num">(202) Thời mạt pháp:</span> Thời kỳ đạo pháp suy yếu, người tu hành không còn giữ được tâm trong sáng.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
