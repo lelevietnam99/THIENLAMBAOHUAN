@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Đàm Tân Tập - 130 (Có Hán Tự)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc */
+        .container::after {
+            content: "圓悟"; /* Tượng trưng dòng thiền */
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 3.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.4em;
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        .dich-nghia p {
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Superscript (Chú thích số) */
+        sup {
+            color: #d4af37;
+            font-size: 0.65em;
+            padding-left: 2px;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.3em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1.05em; line-height: 1.75; }
+            .container::after { font-size: 3em; right: 20px; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Đàm Tân Tập - Mục 130</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán)</h2>
+        <div class="han-tu">
+             佛眼為高庵 viết: 百丈清規, 大概 tiêu chính kiểm tà quĩ vật tề chúng, 乃因時以制 hậu nhân chi tình. 扶人之 tình do thủy dã. 規矩禮法為đê phong. Đê phòng bất cố tất chí bôn đột. Nhân chi tình bất chế tắc tứ loạn. 故去情 tức vọng cấm ác chỉ tà, 不可一時忘規矩. 然則規矩禮法, 豈能 tận phòng chi nhân tình, tư diệc trợ nhập đạo chi giai trì dã. 規矩之立, 昭然如日月. 望之者不迷. 曠乎如大道, 行之者不惑. 先聖建立 tuy thù, 規元無異. 近代叢林有力역 quy củ giả, 有死守 quy củ giả, 有miệt thị quy củ giả, tư giai bối đạo thất lý, túng tình trục ác nhi chi nhiên. 曾不念 tiên thánh cứu mạt pháp chi tệ, 禁放逸之情,  tắc thị dục chi đoan, 絕邪跡之路. 故所以建立 dã.
+            <div class="source">Đông Hồ Tập</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            130.- Phật Nhãn vi Cao Am viết: Bách Trương Thanh Qui, đại khái tiêu chính kiểm tà quĩ vật tề chúng, nãi nhân thời dĩ chế hậu nhân chi tình. Phù nhân chi tình do thủy dã. Qui củ lễ pháp vi đê phong. Đê phòng bất cố tất chí bôn đột. Nhân chi tình bất chế tắc tứ loạn. Cố khứ tình tức vọng cấm ác chỉ tà, bất khả nhất thời vong qui củ. Nhiên tắc qui củ lễ pháp, khởi năng tận phòng chi nhân tình, tư diệc trợ nhập đạo chi giai trì dã. Qui củ chi lập, chiêu nhiên như nhật nguyệt. Vọng chi giả bất mê. Khoáng hồ như đạo đạo, hành chi giả bất惑. Tiên thánh kiến lập tuy thù, qui nguyên vô dị. Cận đại tùng lâm hữu lực dịch qui củ giả, hữu tử thủ qui củ giả, hữu miệt thị qui củ giả, tư giai bối đạo thất lý, túng tình trục ác nhi chi nhiên. Tằng bất niệm tiên thánh cứu mạt pháp chi tệ, cấm phóng dật chi tình, tắc thị dục chi đoan, tuyệt tà tích chi路. Cố sở dĩ kiến lập dã.
+            <div class="source">Đông Hồ Tập</div>
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Phật Nhãn viết cho Cao Am rằng: Bản Thanh Quy của ngài Bách Trượng, đại khái là để tiêu trừ sự chính lệch, kiểm soát tà tâm, làm khuôn phép tề chỉnh đại chúng, ấy là nhân theo thời thế mà chế định ra để kìm hãm cái tình của người đời sau.</p>
+            
+            <p>Phàm tình người cũng giống như nước vậy, quy củ lễ pháp chính là đê điều phòng ngự. Đê điều phòng ngự mà không kiên cố thì tất sẽ dẫn đến việc bứt phá trào dâng. Tình người mà không chế ngự thì ắt sẽ tung hoành hỗn loạn. Cho nên để dứt trừ tình niệm, ngăn cấm điều ác, chặn đứng đường tà, không thể có một phút giây nào được quên đi quy củ.</p>
+            
+            <p>Thế nhưng quy củ lễ pháp há lại có thể phòng bị hết được mọi tình người, đây cũng chỉ là trợ duyên giúp bước lên bậc thềm nhập đạo mà thôi. Quy củ được lập ra, sáng tỏ rực rỡ như nhật nguyệt, người trông thấy thì không bị lầm lạc; rộng rãi lớn lao như đại đạo, người hành trì thì không bị hoang mang nghi hoặc.</p>
+            
+            <p>Các bậc tiên thánh tuy có cách thức kiến lập khác nhau, nhưng quy về nguồn cội thì không có gì khác biệt. Tùng lâm đời gần đây có kẻ thì cậy mạnh đổi mới quy củ, có kẻ thì chết cứng giữ chặt quy củ, có kẻ lại khinh miệt xem thường quy củ; những hạng người đó đều đi ngược lại với đạo lý xa nghìn dặm, thả mặc tình cảm, dong ruổi theo điều ác mà làm ra những hành vi ấy.</p>
+            
+            <p>Họ từng không niệm tưởng đến việc các bậc tiên thánh lập ra quy củ là để cứu vãn cái tệ hại thời mạt pháp, ngăn cấm tình trạng phóng túng lười nhác, chính là để dập tắt mầm mống của sự tham dục và cắt đứt con đường dẫn đến vết xe tà vạy. Đó mới chính là ý nghĩa sâu xa của việc kiến lập quy củ vậy.</p>
+            
+            <div class="source">Đông Hồ Tập</div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">(Bách Trượng Thanh Quy):</span> Bộ quy tắc sinh hoạt thiền viện nổi tiếng do Thiền sư Bách Trượng Hoài Hải thiết lập, đặt nền móng cho quy củ của các tùng lâm Phật giáo Thiền tông.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

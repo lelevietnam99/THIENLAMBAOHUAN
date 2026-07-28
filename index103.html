@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Đàm Tân Tập - 103 (Có Hán Tự)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc */
+        .container::after {
+            content: "文正"; /* Văn Chính */
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 3.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif; /* Font chữ Hán phồn thể */
+            font-size: 1.4em; /* Kích thước chữ lớn để dễ nhìn nét */
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        .dich-nghia p {
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Superscript (Chú thích số) */
+        sup {
+            color: #d4af37;
+            font-size: 0.65em;
+            padding-left: 2px;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.3em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1.05em; line-height: 1.75; }
+            .container::after { font-size: 3em; right: 20px; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Đàm Tân Tập - Mục 103</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán)</h2>
+        <div class="han-tu">
+            文正公位琅琊曰：去年到此思得林下人可語者。常問一吏：「諸寺有好僧乎？」吏稱：「北寺瑞光，希茂二僧為佳。」餘曰：「此外諸船律宗別無家？」吏對餘曰：「儒尊士行，僧論德業。如希茂二忍者，三十年踏不越閫，衣唯布素，聲名利養，了無所滯，故邦人高其操理而師敬之。若其登座說法，大佛揚化，機辯自在，稱善知識者，非騃吏能曉。」待 hạ日訪希茂二上人，視其素行，一如吏言。餘退思，舊衝蘇秀好風俗，今觀老吏，尚能 phân quân tử tiểu nhân ưu liệt, huống其識 giả耶！琅琊曰：「若吏所言，成為高議，請記之以曉未聞。」
+            <div class="source">琅琊別錄</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            103.- Văn Chính Công vị Lang Gia viết: Khứ niên đáo thử tư đắc lâm hạ nhân khả ngữ giả. Thường vấn nhất lại: "Chư sơ hữu hảo Tăng phủ?" Lại xưng: "Bắc Tự Thụy Quang, Hy Mậu nhị Tăng vi giai". Dư viết: "Thử ngoại chư thuyền luật trung biệt vô gia?" Lại đối dư viết: "Nho tôn sĩ hạnh, tăng luận đức nghiệp. Như Hy Mậu nhị nhân giả, tam thập niên đạp bất việt khổn, y duy bố tố, thanh danh lợi dưỡng, liễu vô sở trệ, cố bang nhân cao kỳ tháo lý nhi sư kính chi. Nhược kỳ đăng tọa thuyết pháp, đại Phật dương hóa, cơ biện tự tại, xưng thiện trí thức giả, phi ngoan lại năng hiểu". Ðãi hạ nhật phỏng Hy Mậu nhị thượng nhân, thị kỳ tố hạnh, nhất như lại ngôn. Dư thoái tư, cựu xung Tô tú hảo phong tục, kim quan lão lại, thượng năng phân quân tử tiểu nhân ưu liệt, huống kỳ thức giả da! Lang Gia viết: "Nhược lại sở ngôn, thành vi cao nghị, thỉnh ký chi dĩ hiểu vị văn".
+            <div class="source">Lang Gia Biệt Lục</div>
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Văn Chính Công bảo Lang Gia rằng: Năm ngoái đến đây, ta muốn có được người ở trong chốn thiền lâm, để cùng người đó có thể cùng nói chuyện. Ta thường hỏi một viên quan lại: "Có các vị Tăng tốt trong các sơn môn không?" Viên quan lại nói: "Có hai vị Tăng là Hy và Mậu ở chùa Bắc Tự và Thụy Quang<sup>258</sup> được gọi là tốt vậy". Ta lại hỏi: "Ngoài ra, còn trong các tôn Thiền và Luật khác không có ai nữa vậy ư?".</p>
+            
+            <p>Quan lại thưa: "Nhà Nho thì tôn về sĩ hạnh, hàng Tăng thì bàn về đức nghiệp. Như hai vị Tăng Hy và Mậu đã từng ba mươi năm trời chân không bước ra khỏi cổng, chỉ mặc áo vải thô sơ, không màn chi đến thanh danh lợi dưỡng. Nên người từng chuộng cái tiết tháo đó mà kính trọng như bậc thầy. Nếu đăng tòa thuyết pháp, đại Phật tuyên giáo hóa, thì cơ biện tự tại, còn như gọi là bậc thiện trí thức, thì chẳng phải kẻ hèn ngu dại này hay hiểu được".</p>
+            
+            <p>Tới một ngày nhàn hạ, ta đã tới thăm hai bậc thượng nhân Hy và Mậu, được coi cái hạnh thanh bạch của các ngài, nhất nhất đúng lời viên quan lại đã nói. Ta bất giác và nhớ lại, đất Tô Tú<sup>259</sup> cũ này, được mệnh danh là nơi có phong tục tốt đẹp, nay xem quan lại già nua này mà còn hay phân biệt được chỗ ưu liệt giữa quân tử và tiểu nhân, nữa là người thức giả vậy ư?</p>
+            
+            <p>Lang Gia nói: "Nếu như chỗ viên quan lại nói, thì thật là lời bàn cao quí, xin ghi lại đây để bảo cho những người chưa được nghe biết".</p>
+            
+            <div class="source">Theo Lang Gia Biệt Lục</div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">(258) Bắc Tự và Thụy Quang:</span> Tên hai ngôi chùa nổi tiếng thời bấy giờ.</li>
+                <li><span class="note-num">(259) Tô Tú:</span> Tên gọi chung vùng đất Tô Châu và Tú Châu (nay thuộc khu vực Giang Tô, Chiết Giang).</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

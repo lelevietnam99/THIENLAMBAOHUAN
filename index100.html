@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Đàm Tân Tập - 100 (Có Hán Tự)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc */
+        .container::after {
+            content: "學者"; /* Học giả */
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 3.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif; /* Font chữ Hán phồn thể */
+            font-size: 1.4em; /* Kích thước chữ lớn để dễ nhìn nét */
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        .dich-nghia p {
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Superscript (Chú thích số) */
+        sup {
+            color: #d4af37;
+            font-size: 0.65em;
+            padding-left: 2px;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; /* Vàng - Bậc thánh nhân/Đạo đức */
+            font-weight: 600;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.3em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1.05em; line-height: 1.75; }
+            .container::after { font-size: 3em; right: 20px; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Đàm Tân Tập - Mục 100</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán)</h2>
+        <div class="han-tu">
+            靈源說：學者舉措不可不審，言行不可不稽. 果言者未必愚，利口者未必智. 彼朴者未必悖，乘順者未必忠. 故善知識不以詞盡人情，不以意選學者. 夫湖海衲子，孰不欲求道，于中吾明見理者，千百無一. 其間修身厲行，聚學樹德，非三十年而不能致，偶一事過差而叢林棄之則終身不可立. 夫妙勝之珠，不能無 lỗi, 連城之璧，不免無瑕. 凡在有情，安得無咎. 夫子聖人也，猶以語十學易，無大過為言. 契經則曰：「不怕念起，唯恐覺遲」. 況自聖賢已降，孰無過失哉. 在善知識曲成，則品物不遺矣. 故曰，巧梓順倫角之用，榘直無廢材. 良御適險易之儀，奴驥無失性. 物既如此，人亦宜然. 若進退隨愛憎之情，離合系異同之趣，是猶捨繩墨而裁曲直，棄權衡而恧輕重. 雖說精微，不能無謬矣.
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            100.- Linh Nguyên viết: Học giả cử thố bất khả bất thẩm, ngôn hành bất khả bất kê. Quả ngôn giả vị tất ngu, lợi khẩu giả vị tất trí. Bỉ phác giả vị tất bội, thừa thuận giả vị tất trung. Cố thiện trí thức bất dĩ từ tận nhân tình, bất dĩ ý tuyển học giả. Phù hồ hải nột tử, thùy bัด dục cầu đạo, ư trung ngô minh kiến lý giả, thiên bách vô nhất. Kỳ gian tu thân lệ hành, tụ học thụ đức, phi tam thập niên nhi bất năng trí, ngẫu nhất sự quá sai nhi tùng lâm khí chi tắc chung thân không khả lập. Phù Diệu thặng chi châu, bất năng vô lỗi, liên thành chi bích, bất miễn vô hà. Phàm tại hữu tình, an đắc vô cữu. Phu Tử Thánh nhân dã, do dĩ ngữ thập học Dịch, vô đại quá vi ngôn. Khế kinh tắc viết: " Bất phạ niệm khởi, duy khủng giác trì". Huống tự Thánh hiền dĩ giáng, thục vô quá thất tai. Tại thiện trí thức khúc thành, tắc phẩm vật bất di hỹ. Cố viết, sảo tử thuận luân giác chi dụng, uổng trực vô phế tài. Lương ngự thích hiểm dị chi nghi, nô ký vô thất tính. Vật kí như thử, nhân diệc nghi nhiên. Nhược tiến thoái tùy ái tăng chi tình, ly hợp hệ dị đồng chi thú, thị do xả thằng mặc nhi tài khúc trực, khí quyền hành nhi giảo trọng khinh. Tuy viết tinh vi, bất năng vô mậu hỹ.
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>100.- Linh Nguyên nói: Người học khi động khi tĩnh không thể xem xét kỹ lưỡng, nói và làm không thể không kê cứu tinh tường. Người nói ít chưa ắt là kẻ ngu, kẻ lợi khẩu chưa ắt đã là trí. Người quê mùa chất phác chưa hẳn đã là trái lý, kẻ vâng thuận chưa ắt đã là trung thực. Nên người thiện trí thức chẳng lấy lời mà biết hết được tình người<sup>243</sup>, chẳng lấy ý để tuyển chọn người học.</p>
+            
+            <p>Ôi! Kẻ nột tử trong chốn hồ hải, ai lại chẳng muốn cầu đạo, nhưng ở trong số đó, những người biết rõ thấy lý, thì trong ngàn người không được một. Trong đó, những người tu thân, gắng gỏi thực hành, tụ họp sự học, tài bồi cây đức, nếu không tốn công phu trong ba mươi năm trời, thời sao hay đến được. Nếu chợt gặp một việc quá sai lầm thì chốn tùng lâm sẽ bỏ họ, trọn đời không thể lập thân được. Ôi! Ngọc châu Diệu Thặng<sup>244</sup> không thể không có dấu, ngọc Bích Liên thành sao tránh được không vết. Phàm là loài hữu tình, làm thế nào mà tránh khỏi lầm lỗi. Phu Tử là Thánh nhân, cũng còn năm mươi năm học Dịch<sup>245</sup> không phải là lời nói thái quá.</p>
+            
+            <p>Khế kinh<sup>246</sup> thời nói: "Chẳng sợ vọng niệm khởi, chỉ sợ giác ngộ chậm". Huống hồ, từ bậc Thánh hiền trở xuống, ai lại không có lỗi lầm vậy thay. Nếu có bậc thiện trí thức uốn nắn, thời phẩm vật<sup>247</sup> chẳng bỏ sót vậy. Cho nên nói người thợ khéo tùy chỗ xử dụng mà làm bánh xe hay càng xe, thì phần cong phần thẳng của gỗ không uổng phí<sup>248</sup>. Người khéo cưỡi ngựa, biết thích nghi với con đường nguy hiểm hay dễ dàng, nên không mất cái tính của ngựa nô ngựa ký<sup>249</sup>. Vật đã như thế, người cũng nên thế vậy.</p>
+            
+            <p>Nếu tiến thoái theo cái tình yêu ghét, ly hợp liên hệ ở chốn đồng hay di thế là do nơi bỏ dây mực mà cắt đường cong, thẳng, bỏ cân lường mà so sánh nặng nhẹ, dầu nói rằng tinh vi, nhưng sao tránh khỏi lầm lẫn vậy.</p>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">(243) Thiện trí thức:</span> Bậc đạo sư có kinh nghiệm tu chứng, hướng dẫn người học Phật.</li>
+                <li><span class="note-num">(244) Diệu Thặng:</span> Tên gọi báu vật, ngọc quý.</li>
+                <li><span class="note-num">(245) Học Dịch:</span> Khổng Tử học kinh Dịch, có câu "gia ngã số niên, nhược ngũ thập dĩ học Dịch, khả dĩ vô đại quá hỹ" (nếu thêm cho ta mấy năm, tới năm năm mươi tuổi học kinh Dịch, có thể không có lỗi lớn).</li>
+                <li><span class="note-num">(246) Khế kinh:</span> Kinh điển Phật giáo.</li>
+                <li><span class="note-num">(247) Phẩm vật:</span> Các loài, các vật, ở đây chỉ chung các hạng người học.</li>
+                <li><span class="note-num">(248, 249) Thợ khéo, người cưỡi ngựa:</span> Ví dụ về việc dụng nhân, tùy tài năng phẩm chất mà uốn nắn, sắp xếp cho phù hợp.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
