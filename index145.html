@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Văn Khuyên An Ủi Lão Bệnh Tăng - Thiền Lâm Bảo Huấn</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc */
+        .container::after {
+            content: "寶訓"; /* Bảo Huấn */
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif; 
+            font-size: 1.6em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Superscript (Chú thích số) */
+        sup {
+            color: #d4af37;
+            font-size: 0.65em;
+            padding-left: 2px;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; 
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; 
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.25em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.4em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1.05em; line-height: 1.75; }
+            .container::after { font-size: 3em; right: 20px; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Thiền Lâm Bảo Huấn - Bài 145</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            高庵勸安老病僧曰：貧道常閱藏教底審佛意。不許比丘坐受無功之食，生懶惰心，起吾我見者。每至晨朝佛及弟子，持缽乞食，不擇貴賤，心無高下。俾得福者一切均等。後所充常住者，本為老病比丘不能行乞者設，非少壯之徒可得而食。迨佛滅後，正法世中亦復如是。像季已來中國禪林不廢乞食，但推能者為之。所得利養聚為招提以安廣眾，遂廢逐日行乞之規也。今聞數剎，住持不識因果，不安老僧，背戾佛旨，削弱法門。苟不住院，老將安歸。竟不反思，常住財物，本為誰置。當推何心以合佛心。當推何行以合佛行。昔佛在日，或不赴請，留身淨舍，遍巡僧房，看視老病，一一咨問，一一辦置。仍勸請諸比丘，遞相恭敬。隨順方便，去其瞋嫌。此調御師統領大眾楷模也。今之當代恣用常住，資給口體，結託權貴。仍更絕老者病者。眾僧之物掩為己有。佛心佛行渾無一也。悲夫！悲夫！古德云：「老僧乃山門之標榜也」。今之禪林，百僧之中，無一老者。老而不納益知壽考之無補，反不如夭死。願今當代各遵佛語紹隆祖位，安撫老病。常住有無，隨宜供給，無使愚昧，專權滅裂，以招來世，短促之報，切宜加察。<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 高庵勸安老病僧</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Cao Am khuyến an lão bệnh Tăng viết: Bần đạo thường duyệt Tạng giáo để thẩm Phật ý. Bất hứa Tỳ khưu tọa thụ vô công chi thực, sinh lãn nọa tâm, khởi ngô kiến giả. Mỗi chí thần triêu Phật cập đệ tử, trì bát khất thực, bất trạch quí tiện, tâm vô cao hạ. Tỉ đắc phúc giả nhất thiết quân đoàn. Hậu sở xung thường trụ giả, bản vị lão bệnh Tỳ khưu bất năng hành khất giả thiết, phi thiếu tráng chi đồ khả đắc nhi thực. Ðãi Phật diệt hậu, chính pháp thế trung diệc phục như thị. Tượng quí dĩ lai Trung quốc thiền lâm bất phế khất thực, đãn suy năng giả vi chi. Sở đắc lợi dưỡng tụ vi chiêu đề dĩ an quảng chúng, toại chiếp trục nhật hành khất chi qui dã. Kim văn sổ sát, trụ trì bất thức nhân quả, bất an lão Tăng, bối lệ Phật chỉ, tước nhược pháp môn. Cẩu bất trụ viện, lão tương an quí. Cảnh bất phản tư, thường trụ tài vật, bản vi thủy trí. Ðương suy hà tâm dĩ hợp Phật tâm. Ðương suy hà hạnh dĩ hợp Phật hạnh. Tích Phật tại nhật, hoặc bất phó thỉnh, lưu thân tịnh xá, biến tuần Tăng phòng, khán thị lão bệnh, nhất nhất chi vấn, nhất nhất biện trí. Nhưng khuyến thỉnh chư Tỳ khưu, đệ tương cung kính. Tùy thuận phương tiện, khử kỳ sân hiềm. Thử Ðiều Ngự Sư thống lý đại chúng khải mô dã. Kim chi đương đại tứ dụng thường trụ, tư cấp khẩu thể, kết thác quyền quí. Nhưng cánh tuyệt lão giả bệnh giả. Chúng Tăng chi vật yểm vi kỷ hữu. Phật tâm Phật hạnh hồn vô thất dã. Bỉ phù! Bỉ phù! Cổ đức vân: " Lão Tăng nãi sơn môn chi tiêu bảng dã". Kim chi thiền lâm, bách Tăng chi trung, vô nhất lão giả. Lão nhi bất nạp ích chi thọ khảo chi vô bổ, phản bất như yểu tử. Nguyện kim đương đại các tuân Phật ngữ Thiệu Long Tổ vị, an phú lão bệnh. Thường trụ hữu vô, tùy nghi cung cấp, vô sử ngu muội, chuyên quyền diệt liệt, chi chiêu lai thế, đoản súc chi bảo, thiết nghi gia sát.
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Văn khuyên nhủ an ủi các lão bệnh Tăng của <span class="kw-good">Cao Am</span> có chép: Bần đạo thường xem Tạng giáo, xét kỹ ý Phật, không cho phép các Tỳ khưu ngồi hưởng thụ những món ăn mà họ không dự phần công lao, để họ sinh tâm lười biếng, dấy kiến nhân ngã. Nên cứ mỗi buổi sáng, Phật và các đệ tử mang bát đi khất thực, chẳng lựa chọn nhà sang hèn, không phân biệt kẻ cao thấp, để khiến cho mọi người đều được phúc bình đẳng như nhau.</p>
+            
+            <p>Mãi về sau này mới có cái tên gọi là thường trụ là cốt vì các lão bệnh Tỳ khưu không thể đi khất thực được mới lập ra, thật sự không phải là những người trẻ khỏe được dự phần ăn dùng trong đó. Kể từ khi đức Phật diệt độ trở về sau, trong thời chánh pháp các Tỳ khưu vẫn còn theo lề lối khất thực như trước, nhưng từ thời Tượng quí trở lại đây, khắp chốn tùng lâm tại Trung quốc, tuy chưa bỏ hẳn hạnh khất thực, nhưng chỉ suy cử những người có đầy đủ tài đức ra thực hiện việc đó. Về sau những lợi dưỡng đã xin được, tích góp lại làm của <span class="kw-good">chiêu đề</span><sup>325</sup> để cúng dường đại chúng, rồi dần dần bỏ mất cái quy luật khất thực hàng ngày.</p>
+            
+            <p>Nay nghe thấy một số ít các chùa, người trụ trì lại chẳng biết đến nhân quả, chẳng cung dưỡng lão Tăng, trái ngược với ý Phật, thương tổn đến pháp môn. Nếu chẳng trụ trì ở tu viện, thì các lão Tăng sẽ an trụ ở đâu? Sao họ không nghĩ lại, của cải của thường trụ vốn dĩ vì ai mà đặt ra. Nên phải xét dùng tâm như thế nào để hợp với tâm Phật, làm hạnh như thế nào để hợp với hạnh Phật.</p>
+            
+            <p>Xưa kia, ngày đức Phật còn tại thế, hoặc có ngày Phật không tới dự thỉnh trai ở nhà đàn việt, giam mình nơi tịnh xá, thì ngài đi khắp các Tăng phòng, thăm hỏi người già bệnh, nhất nhất đều an ủi, nhất nhất đều chu biện, lại còn khuyên bảo các Tỳ khưu nên cung kính lẫn nhau, tùy thuận những phương tiện, để gạt bỏ mọi hiềm thù sân hận. Ðó là cái khuôn phép mẫu mực của đấng <span class="kw-good">Ðiều Ngự Sư</span><sup>326</sup> thống lý tất cả đại chúng vậy.</p>
+            
+            <p><span class="kw-bad">Người thời nay</span>, lại phóng túng tiêu dùng của thường trụ, tư cấp cho miệng lưỡi xác thân, giao kết với kẻ quyền qúi, làm cách tuyệt người già và người bệnh. Thậm chí còn lấy của cải của Tăng chúng giấu làm của riêng mình. Tâm Phật và hạnh Phật không còn được lấy một vậy. Thật thương thay! Bi đát thay!</p>
+            
+            <p>Cổ đức nói: "Lão Tăng là tiêu bảng của sơn môn". Chốn thiền môn đời nay, trong số Tăng sĩ hàng một trăm người, không có lấy một người là bậc lão thành. Già mà không được thu nạp, thấy rõ rằng sống lâu là vô bổ, chi bằng chết non còn hơn.</p>
+            
+            <div class="conclusion">
+                Vậy tôi mong các Tăng sĩ trong chốn thiền lâm đương thời, hãy tuân theo lời Phật, nối dõi ngôi Tổ, nuôi dưỡng an ủi người già bệnh, tùy theo tài vật của thường trụ có hay không mà cung cấp cho thích nghi, đừng để cho kẻ ngu muội chuyên quyền làm tiêu diệt qui củ giáo pháp, mà vời lấy cái quả báo chết non ở đời sau. Rất tha thiết mong các hàng Tăng sĩ nhận xét thêm cho kỹ.
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">(325) Chiêu đề (招提):</span> Bắt nguồn từ chữ "Thác Đấu Đề Xá" (Catur-diśa) trong tiếng Phạn, có nghĩa là bốn phương (tứ phương). Chỉ tự viện, chốn dừng chân của chư tăng mười phương đến tu học. "Của chiêu đề" là tài sản chung của thập phương tăng chúng.</li>
+                <li><span class="note-num">(326) Điều Ngự Sư (調御師):</span> Tên gọi tắt của Điều Ngự Trượng Phu (Puruṣa-damya-sārathi), một trong 10 danh hiệu tôn quý của Đức Phật. Có nghĩa là đấng khéo léo thiếp phục, dẫn dắt và điều ngự những chúng sanh cang cường đưa vào nẻo thiện.</li>
+                <li><span class="note-num">Thiệu Long Tổ vị (紹隆祖位):</span> Nối tiếp và làm hưng thịnh ngôi vị (sự nghiệp, đạo pháp) của các vị Tổ sư truyền lại.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

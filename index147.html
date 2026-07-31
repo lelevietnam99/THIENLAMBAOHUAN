@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Tùng Lâm Thịnh Sự - Thiền Lâm Bảo Huấn</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc */
+        .container::after {
+            content: "寶訓"; /* Bảo Huấn */
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif; 
+            font-size: 1.6em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Superscript (Chú thích số) */
+        sup {
+            color: #d4af37;
+            font-size: 0.65em;
+            padding-left: 2px;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; 
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; 
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.25em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.4em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1.05em; line-height: 1.75; }
+            .container::after { font-size: 3em; right: 20px; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Thiền Lâm Bảo Huấn - Bài 147</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            歸雲本和尚辯佞篇曰：本朝富鄭公(弼)，問道於投子顒禪師。書尺偈頌凡一十四紙。碑於台州洪福兩廊壁間。灼見前輩主法之嚴，王公貴人信道之篤也。鄭國公社稷重臣，晚年之向之如此。而顒必有大過人者。自謂於顒有所警發。士夫中諦信此道，能忘齒屈勢，奮發猛利，期於徹證而後已。如楊大年侍郎、李和文都尉，見廣慧璉、石門聰、慈明諸大老，擊揚酬唱，班班見諸禪書。楊無為之於白雲端，張無盡之於兜率悅。皆叩關擊節，徹證源底，非苟然者也。近世張無垢侍郎、李漢老參政、呂居仁學士，皆見妙喜老人。登堂入室，謂之方外道友。愛憎逆順雷揮電掃，脫略世俗拘忌。觀者斂衽惕息罔窺涯涘。然士君子相求於空閑寂寞之濱，擬棲心禪寂發揮本有而已。後世不見先德階模，專事諂媚，曲求進顯。凡以住持薦名為長老者。往往書帖，以稱門僧。奉前人為恩主，取招提之物苞苴獻佞。識者愍笑而恬不知恥。嗚呼！吾沙門釋子，一瓶一缽，雲行鳥飛，非有凍餒之迫，子女玉帛之戀，而欲折腰擁篲酸寒局促，自取辱賤之如此也。稱恩主者出於一己私無所依據，一妄庸唱之於其前，百妄庸和之於其後。擬爭奉之真卑小耳。削弱風教莫甚於佞人。實姦邪欺偽之漸，雖端人正士稍為其所入，則陷身於不義，失德於無救，可不哀歟！破法比丘，魔氣所鍾，狂誕自若。詐現智識身相，指禪林大老為之師承，媚當路貴人為之宗屬。伸不請之敬，啟壞法之端。白衣登牀膜拜其下。曲違聖制，大辱宗風。吾道之衰極至於此。嗚呼！天主鬼錄，萬死奚贖。非佞者歟。嵩禪師原教有云：「古之高僧者，見天子不臣。詔書則曰公曰師。鍾山僧遠鸞輿及門而牀坐不迎。虎溪慧遠。天子臨潯陽而詔不出山」。當世待其人尊其德，是故聖人之道振。後世之慕其高僧者，交卿大夫不得與下士之禮。其出其處不若庸人之自得也。況如僧遠之見天子乎。況如慧遠之自若乎。望吾道興吾人之修，其可得乎。存其教而一毀其人，存之何以益乎。惟此為嘗涕泣，淳熙丁酉。余謝事顯恩。寓居平田西山小塢。以日近見聞事多矯偽古風彫落。吾言不足為之重輕。聊書以自警云。<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 叢林盛事</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Qui Vân Bản Hòa thượng biện nịnh thiên viết: Bản triều Phú Trịnh Công (Bật), vấn đạo ư Ðầu Tử Ngung thiền sư. Thư xích kệ tụng phàm nhất thập tứ chỉ. Bi ư Thai châu Hồng Phúc lưỡng lang bích gian. Chước kiến tiền bối chủ pháp chi nghiêm, vương công quí nhân tín đạo chi đốc dã. Trịnh Quốc Công xã tắc trọng thần, vãn niên chi hướng chi như thử. Nhi Ngung tất hữu đại quá nhân giả. Tự vị ư Ngung hữu sở cảnh phát. Sĩ phu trung đế tín thử đạo, năng vong xỉ khuất thế, phấn phát mãnh lợi, kỳ ư triệt chứng nhi hậu dĩ. Như Dương Ðại Niên Thị Lang Lý, Hòa Văn Ðô Úy, kiến Quảng Tuệ Liên. Thạch Môn Thông tinh Từ Minh chư đại lão kích dương thù xướng, ban ban kiến chư thiền thư. Dương Vô Vi chi ư Bạch Vân Ðoan, Trương Vô Tận chi ư Ðâu Xuất Duyệt. Giai khấu quan kích tiết, triệt chứng nguyên để, phi cẩu nhiên giả dã. Cận thế Trương Vô Cấu Thị Lang, Lý Hán Lão Tham Chánh, Lã Cư Nhân học sĩ, giai kiến Diệu Hỷ lão nhân. Ðăng đường nhập thất, vị chi phương ngoại đạo hữu. Ái tăng nghịch thuận lôi huy điện tảo, thoát lược thế tục câu kị. Quan giả liễm nhẫm tịch dịch võng khuy nhai sĩ. Nhiên sĩ quân tử tương cầu ư không nhàn tịch mịch chi tân, nghĩ thê tâm thiền tịch phát huy bản hữu nhi dĩ. Hậu thế bất kiến tiên đức giai mộ, chuyên sự du mị, khúc cầu tiến hiển. Phàm dĩ trụ trì tiến danh vi Trưởng lão giả. Vãng vãng thư thích, dĩ xưng môn Tăng. Phụng tiền nhân vị ân phủ, thủ chiêu đề chi vật bao tư hiến nịnh. Thức giả mẫn tiếu nhi điềm bất tri xĩ. Ô hô ngô sa môn thích tử, nhất bình nhất bát, vân hành điểu phi, phi hữu đống nỗi chi bách, tử nữ ngọc bạch chi luyến, nhi dục triết yêu ủng tuệ toan hàn cục tích, tự thủ nhục tiện chi như thử dã. Xưng ân phủ giả xuất nhất kỷ tư vô sở y cứ, nhất vọng dong xướng chi ư kỳ tiền, bách vọng dong họa chi ư kỳ hậu. Nghĩ tranh phụng chi chân ty tiểu nhĩ. Tước nhược phong giáo mạc thậm ư nịnh nhân. Thực gian tà khi ngụy chi tiệm, tuy đoan nhân chính sĩ sảo vi kì sở nhập, tắc hãm thân ư bất nghĩa, thất đức ư vô cứu, khả bất ai dư! Phá pháp Tỳ khưu, ma khí sở chung, cuồng đản tự nhược. Trá hiện trí thức thân tướng, chỉ thiền lâm đại lão vi chi sư thừa, mi đương lộ quí nhân vi chi tông thuộc. Thân bất thỉnh chi kính, khải hoại pháp chi đoan. Bạch y đăng sàng mô bái kỳ hạ. Khúc vi Thánh chế, đại nhục tông phong. Ngô đạo chi suy cực chí như thử. Ô hô! Thiên chủ qui lục, vạn tử hề thục. Phi nịnh giã dư. Tung thiền sư Nguyên giáo hữu vân: "Cố chi cao Tăng giả, kiến thiên tử bất thần. Dự chế thư tắc viết công viết sư. Chung Sơn Tăng Viễn loan dư cập môn nhi sàng tọa bất nghinh. Hổ Khê Tuệ Viễn. Thiên tử lâm Tầm Dương nhi chiếu bất xuất sơn". Ðưong thế đãi kì nhân tôn kì đức, thị cố Thánh nhân chi đạo chấn. Hậu thế chi mô kỳ cao Tăng giả, giao khanh đại phu bất đắc dự hạ si chi lễ. Kỳ xuất kỳ xử bất nhược dong nhan chi tự đắc dã. Huống như Tăng Viễn chi kiến thiên tử hồ. Huống như Tuệ Viễn chi tự nhược hồ. Vọng ngô đạo hưng ngô nhân chi tu, kỳ khả đắc hồ. Tồn kỳ giáo nhi nhất tu kỳ nhân, tồn chư hà dĩ ích hồ. Duy thử vi thường bất thế há, Thuần Hy Ðinh Dậu. Dư tạ sự Hiển Ân. Ngụ cư Bình Ðiền Tây Sơn tiểu ổ. Dĩ nhật cận kiến văn sự đa kiểu ngụy cổ phong điêu lạc. Ngô ngôn bất túc vi chi trọng khinh. Liêu thư dĩ tận cảnh vân.
+            <div class="source">— Tùng Lâm Thịnh Sự.</div>
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p>Trong Biện Nịnh thiên của <span class="kw-good">Qui Vân Bản</span><sup>328</sup> Hòa thượng chép: Bản triều có <span class="kw-good">Phú Trịnh Công Bật</span><sup>329</sup> hỏi đạo ở thiền sư <span class="kw-good">Ðầu Tử Ngung</span><sup>330</sup>, viết thư đi lại bằng những bài kệ tụng, gồm mười bốn trang giấy được khắc vào bia đá ở tả hữu hai bên hành lang chùa Hồng Phúc thuộc Thai Châu, để được thấy rõ ràng chỗ trang nghiêm rực rỡ về chủ pháp của tiền bối, và nhận thấy sự tin đạo sâu xa của hàng vương công quí nhân.</p>
+            
+            <p>Trịnh Quốc Công là một trọng thần của xã tắc tới lúc tuổi già còn biết xu hướng tin đạo như thế, thì Ngung thiền sư phải có tư tưởng đặc sắc hơn người. Quốc Công tự bảo rằng chính ông đã được chỗ dạy bảo cảnh sách của Ngung thiền sư mà phát sinh liễu ngộ.</p>
+            
+            <p>Trong đám sĩ phu thâm tín Phật đạo, hay quên cả tuổi tác thế vị, phát khởi tâm tinh tiến mạnh mẽ, chỉ mong đạt tới chỗ chứng ngộ triệt để rồi sau mới thôi. Như <span class="kw-good">Dương Ðại Niên</span> Thị Lang<sup>331</sup>, <span class="kw-good">Lý Hòa Văn</span><sup>332</sup> Ðô Úy được gặp Quảng Tuệ Liễn<sup>333</sup>, Thạch Môn Thông và Từ Minh chư đại lão. Những các cơ duyên như kích dương thù xướng<sup>334</sup> còn thấy chép nhan nhản trong các thiền thư.</p>
+            
+            <p>Như Dương Vô Vi tham thiền nơi Bạch Vân Ðoan, Trương Vô Tận nơi ngài Ðâu Xuất Duyệt<sup>335</sup> đều từ chỗ gõ cửa đánh xênh<sup>336</sup> mà đưa tới phần chứng ngộ triệt để được gốc nguồn. Chẳng phải chỉ những như thế mà thôi. Thời cận đại lại có <span class="kw-good">Trương Vô Cấu</span><sup>337</sup> Thị Lang, <span class="kw-good">Lý Hán Lão</span><sup>338</sup> Tham chánh, <span class="kw-good">Lã Cư Nhân</span><sup>339</sup> học sĩ, đều hỏi đạo ở Diệu Hỷ Lão nhân. Khi đăng đường lúc nhập thất<sup>340</sup> đều bảo là những bạn đạo xuất trần. Hành động yêu ghét thuận nghịch, mạnh như chớp giật sấm vang, không câu nệ chỗ kiêng kỵ của thế gian, khiến người thấy phải khép nép lo sợ mà chẳng lường được bờ bến. Song le, những người hiền sĩ quân tử là cốt cùng nhau tìm đến không nhàn tịch mịch, ngưng tâm nơi thiền tịch, để phát huy cái phần chân tâm sẵn có của mình mà thôi.</p>
+            
+            <p><span class="kw-bad">Người đời sau</span> đã chẳng bắt chước được cái khuôn phép mẫu mực của tiên đức, lại chuyên việc ton hót nịnh bợ, để mong cầu tiến thân hiển đạt. Phàm người lấy chức vị trụ trì để dương lên làm bậc Trưởng lão, thì thường thường viết tên trên thư thiếp để xưng mình là Tăng trong môn hạ. Cung phụng người thì chủ trước kia lấy đó làm ân phủ, rồi đem của thường trụ Tăng đùm bọc nịnh bợ hiến dâng, làm trò cười cho kẻ thức giả mà vẫn điềm nhiên chẳng biết hổ. Than ôi! Sa môn Thích tử của đạo ta, một bình một bát như mây chạy chim bay, không lo sợ phần đói rét bức bách, chẳng luyến ái về con cái, tơ lụa ngọc ngà, mà lại muốn khom lưng uốn mình, rón rén run sợ để tự chuốc lấy sự việc ti tiện nhục nhã như thế vậy ư!</p>
+            
+            <p>Người được gọi là ân phủ (ân hậu sâu dày), chỉ là điểm xuất phát phần riêng biệt của một mình, không có chỗ y cứ, nhưng vì một người càn bậy tầm thường xướng xuất việc đó ở trước, nên trăm kẻ càn bậy tầm thường lại phụ họa theo ở sau, rồi phỏng theo mà tranh nhau cung phụng lại họ, thì quả thật là việc thấp hèn nhỏ mọn vậy. Người làm cho phong giáo suy đồi chẳng gì tệ hại hơn bằng kẻ nịnh bợ. Quả thật chỗ tiêm nhiễm gian tà dối trá, tuy là đoan nhân chính sĩ, nếu một khi đã bị nó xâm nhập, thời tất phải hãm mình vào chỗ bất nghĩa, thất đức mà không thể cứu được. Thật đáng thương thay!</p>
+            
+            <p>Tỳ khưu phá pháp, bị ma khí ám ảnh, nói láo nói sằng tự đắc, giả hiện thân tướng người trí thức, nhận đại lão chốn thiền lâm bảo đó là sư thừa, nịnh người sang trọng ở giữa đường bảo đó là tông thuộc, tỏ thái độ cung kính chẳng đợi mời, mở đầu mối phá hoại nơi chánh pháp. Người bạch y để ngồi ngạo nghễ trên giường, còn mình quỳ lạy dưới đất, bẻ cong điều cấm chế của đức Phật, làm nhơ nhuốc thậm tệ tới tông phong. Sự suy đồi của đạo ta đến như thế là cùng cực vậy. Than ôi! Trời ghi quỷ chép những tội trạng, đáng muôn phần chết làm thế nào chuộc lại được. Ðó chẳng phải đều từ tội trạng của con người nịnh bợ mà ra vậy ư?</p>
+            
+            <p>Luận Nguyên Giáo của Minh Giáo Tung thiền sư chép: "Bậc cao Tăng thời xưa, khi yết kiến Thiên tử cũng còn chẳng chịu lễ bề tôi. Dự thảo chế thư thời gọi rằng quốc sĩ, rằng vương sư. <span class="kw-good">Tăng Viễn</span><sup>341</sup> ở Chung Sơn, khi xe loan nhà vua tới cửa, vẫn ngồi trên giường không nghinh tiếp. <span class="kw-good">Tuệ Viễn</span><sup>342</sup> ở Hổ Khê, lúc Thiên tử tới đất Tầm Dương có chiếu mời, cũng chẳng chịu ra khỏi núi".</p>
+            
+            <p>Ðương thời đó, sự đãi người như thế, tôn đức như vậy, nên cái đạo của Thánh nhân được hưng thịnh. Ðời sau, những người hâm mộ cao Tăng thì khi giao thiệp với công khanh đại phu, còn không được đối đãi với phần lễ nghi của kẻ hạ sĩ. Xét phần xuất xứ của họ, đã chẳng bằng chỗ tự đắc của người thường, đâu được như thái độ yết kiến thiên tử của Tăng Viễn vậy ư? Ðâu được như thái độ tự tại của Tuệ Viễn vậy ư? Như vậy mà mong đạo ta hưng thịnh, sự tu của chúng ta tiến đạt, đâu có thể vậy ư? Cũng vì thế mà ta không thể không rơi lệ.</p>
+            
+            <div class="conclusion">
+                Niên hiệu Thuần Hy năm Ðinh Dậu, ta thôi công việc chùa Kiến Ân, ngụ tại một làng xóm nhỏ tại Tây Sơn đất Bình Ðiền, nhân chỗ mắt thấy tai nghe ở những ngày gần đây, nhận xét thấy những sự việc phần nhiều là giả trá, làm suy tàn mất thói xưa. Lời nói của ta chẳng đủ để cân nhắc nặng nhẹ liền vội viết ra đây để tự cảnh sách mình.
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">(328) Qui Vân Bản (歸雲本):</span> Thiền sư Qui Vân Bản đời Nam Tống, người có chí khí thanh cao, từng soạn bài "Biện Nịnh Thiên" (Bài văn chỉ trích sự siểm nịnh) để chấn chỉnh tệ nạn bợ đỡ quyền quý trong thiền môn đương thời.</li>
+                <li><span class="note-num">(329) Phú Trịnh Công Bật (富鄭公弼):</span> Phú Bật, tước Trịnh Quốc Công, một vị Tể tướng đức độ và kiệt xuất thời Tống, rất thâm tín Phật pháp.</li>
+                <li><span class="note-num">(330) Đầu Tử Ngung (投子顒):</span> Thiền sư Đầu Tử Nghĩa Thanh (hay Đầu Tử Ngung). </li>
+                <li><span class="note-num">(331) Dương Đại Niên Thị Lang:</span> Tức Dương Ức (tự Đại Niên), một học giả uyên bác thời Tống, tu thiền đắc pháp.</li>
+                <li><span class="note-num">(332) Lý Hòa Văn (李和文):</span> Tức Lý Tuân Úc, tự Hòa Văn, phong chức Đô Úy, là phò mã triều Tống nhưng một lòng tu thiền và có chỗ khế ngộ.</li>
+                <li><span class="note-num">(333) Quảng Tuệ Liễn (廣慧璉):</span> Thiền sư Quảng Tuệ Nguyên Liễn.</li>
+                <li><span class="note-num">(334) Kích dương thù xướng (擊揚酬唱):</span> Những cuộc đối đáp thiền cơ (vấn đáp) mạnh mẽ, trực diện giữa thiền sư và đệ tử để khai mở tâm trí, đập tan vô minh.</li>
+                <li><span class="note-num">(335) Đâu Xuất Duyệt (兜率悅):</span> Thiền sư Đâu Xuất Tòng Duyệt.</li>
+                <li><span class="note-num">(336) Khấu quan kích tiết (叩關擊節):</span> Gõ cửa (khấu quan) và gõ nhịp (kích tiết) - Ẩn dụ cho việc cầu đạo tha thiết và sự tương ưng, khế hợp giữa thầy và trò trong việc truyền pháp.</li>
+                <li><span class="note-num">(337) Trương Vô Cấu (張無垢):</span> Tức Trương Cửu Thành, hiệu Vô Cấu cư sĩ.</li>
+                <li><span class="note-num">(338) Lý Hán Lão (李漢老):</span> Tức Lý Bỉnh, tự Hán Lão, làm quan Tham chính.</li>
+                <li><span class="note-num">(339) Lã Cư Nhân (呂居仁):</span> Tức Lã Bản Trung, tự Cư Nhân. Các vị học sĩ thời Tống này đều lui tới tham học với Thiền sư Đại Huệ Tông Cảo (Diệu Hỷ Lão nhân).</li>
+                <li><span class="note-num">(340) Đăng đường nhập thất (登堂入室):</span> Lên sảnh đường, vào thiền thất. Chỉ người đệ tử đã đạt được trình độ học đạo cao sâu, được vào thiền thất riêng của thầy để ấn chứng thâm nghĩa.</li>
+                <li><span class="note-num">(341) Tăng Viễn (僧遠):</span> Pháp sư Đạo Viễn ở núi Chung Sơn. Khi Lương Vũ Đế ngự giá đến tận cửa chùa, sư vẫn ngồi an nhiên trên pháp tòa không bước xuống nghênh giá, bộc lộ khí phách của người xuất trần.</li>
+                <li><span class="note-num">(342) Tuệ Viễn (慧遠):</span> Tổ sư Huệ Viễn (sơ tổ Tịnh Độ tông) ngụ tại chùa Đông Lâm núi Lô Sơn. Sư lập lời thề "Ảnh bất xuất sơn, tích bất nhập tục" (Bóng không ra khỏi núi, dấu chân không vào chốn phàm tục), ngay cả khi Hoàng đế An Đế nhà Tấn đến Tầm Dương hạ chiếu vời sư ra, sư cũng từ chối không chịu rời núi Hổ Khê.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
