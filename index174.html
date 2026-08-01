@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Tây Sơn Ký Văn - Thiền Lâm Bảo Huấn (Bài 174)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc */
+        .container::after {
+            content: "寶訓"; /* Bảo Huấn */
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif; 
+            font-size: 1.6em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Superscript (Chú thích số) */
+        sup {
+            color: #d4af37;
+            font-size: 0.65em;
+            padding-left: 2px;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; 
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; 
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.25em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.4em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1.05 em; line-height: 1.75; }
+            .container::after { font-size: 3em; right: 20px; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Thiền Lâm Bảo Huấn - Bài 174</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        .han-tu {
+            font-family: 'Noto Serif TC', serif; 
+            font-size: 1.6em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+        <div class="han-tu">
+            死心住翠岩，聞覺範竄逐海外，道過南昌。邀貴山中迎待連日 hậu禮進送。或位：「死心喜怒無常」。死心曰：「覺範有德衲子。向者極言去其圭角。今累橫逆視其素分。予以平日時林道義處之」。識者位：「死心無私於人故如此」。<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 西山記聞</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Tử Tâm trụ Thúy Nham, văn Giác Phạm thoán trục hải ngoại, đạo quá Nam Xương. Yêu quý sơn trung nghênh đãi liên nhật hậu lễ tiến tống. Hoặc vị: "Tử Tâm hỷ nộ bất thường". Tử Tâm viết: "Giác Phạm hữu đức nột tử. Hướng giả cực ngôn khứ kỳ khuê giốc. Kim lụy hoạnh nghịch thị kỳ tố phận. Dư dĩ bình nhật tùng lâm đạo nghĩa xử chi". Thức giả vị: "Tử Tâm vô tư ư nhân cố như thử".
+            <div class="source">— Tây Sơn Ký Văn.</div>
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p><span class="kw-good">Tử Tâm</span> trụ trì chùa Thúy Nham, nghe biết <span class="kw-good">Giác Phạm</span> bị đày nơi hải ngoại, trên đường qua đất Nam Xương, ngài liền đón về chùa tiếp đãi nhiều ngày, còn đem hậu lễ đưa tiễn nơi bến đò.</p>
+            
+            <p>Hoặc có người nói: "Tử Tâm là người mừng giận bất thường".</p>
+            
+            <p>Tử Tâm nói: "Giác Phạm là người nột tử có đức, chỉ vì trước đây ta cực lực nói thẳng là muốn trừ khử cái tính róc rách hay soi bói lỗi người của ông, nay cũng vì thế mà ông mắc phải hoạnh nghịch, âu đó cũng là tố phận. Ta chỉ thấy tình đạo nghĩa ngày thường ở tùng lâm mà đối xử vậy".</p>
+            
+            <div class="conclusion">
+                Thức giả bảo: "Tử Tâm là người không có tâm riêng tư nên mới biểu lộ cử chỉ như thế".
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">Giác Phạm (覺範):</span> Tịch hiệu của Thiền sư Huệ Hồng (1071-1128), một bậc văn hào, học giả lớn đồng thời là danh tăng đời Bắc Tống, tác giả của *Lâm Gian Lục*. Ngài từng bị triều đình liên lụy, lưu đày (thoán trục hải ngoại).</li>
+                <li><span class="note-num">Khuê giốc (圭角):</span> Góc cạnh sắc bén. Chỉ tính khí kiêu ngạo, hay tranh cãi, phô trương tài năng hoặc soi mói khuyết điểm của người khác. Thiền sư Tử Tâm từng nghiêm khắc phê bình Giác Phạm vì điểm này, nhưng khi Giác Phạm gặp hoạn nạn, ngài lại rộng lượng hết lòng đùm bọc.</li>
+                <li><span class="note-num">Hoạnh nghịch (橫逆):</span> Tai vạ bất ngờ, những điều trái nghịch, oan ức do thời cuộc giáng xuống.</li>
+                <li><span class="note-num">Tùng lâm đạo nghĩa (叢林道義):</span> Tình nghĩa đạo đức cao cả giữa những người tu hành trong chốn tùng lâm. Dù có thể bất đồng hoặc nghiêm khắc phê bình nhau khi bình thường, nhưng khi hoạn nạn, người tu hành chân chính vẫn lấy đạo nghĩa tình thầy trò, bạn đạo làm trọng.</li>
+                <li><span class="note-num">Thức giả (識者):</span> Người có kiến thức sâu rộng, hiểu biết đạo lý. Những người am tường nhận xét rằng hành động của Tử Tâm xuất phát từ sự vô ngã, không vì ân oán cá nhân (vô tư ư nhân).</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
