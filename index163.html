@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Dật Sự - Thiền Lâm Bảo Huấn (Bài 163)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc */
+        .container::after {
+            content: "寶訓"; /* Bảo Huấn */
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif; 
+            font-size: 1.6em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Trình bày Kệ (Thơ) */
+        .poem {
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 115, 85, 0.3);
+            border-radius: 4px;
+            text-align: center;
+            font-family: 'Lora', serif;
+            font-size: 1.15em;
+            font-style: italic;
+            color: #d4af37;
+            line-height: 2.2;
+            width: fit-content;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Superscript (Chú thích số) */
+        sup {
+            color: #d4af37;
+            font-size: 0.65em;
+            padding-left: 2px;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; 
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; 
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.25em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.4em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1.05em; line-height: 1.75; }
+            .poem { font-size: 1.05em; padding: 15px; }
+            .container::after { font-size: 3em; right: 20px; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Thiền Lâm Bảo Huấn - Bài 163</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            雪堂曰：萬庵送高庵過天台，回謂予言：有德觀首座，隱景星巖三十載，影不出山。龍學景公為郡。特以瑞巖迎之，觀辭以偈曰：<br><br>
+            「三十年來獨掩關，<br>
+            使符那得到青山。<br>
+            休將瑣末人間事，<br>
+            換我一生林下閒。」<br><br>
+            使命再至，終不就。景公歎曰：「今日隱山之流也。」萬庵曰：「彼有老宿能記其語者，乃曰：不體道本，沒溺生死，觸境生心，隨情動念，狼心狐意，諂行誑人，負勢阿容，徇名苟利，乖真逐妄，背覺合塵，林下道人，終不為也。」予曰：「觀亦僧中間氣也。」<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 逸事</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Tuyết Ðường viết: Vạn Am tống Cao Am quá Thiên Thai hồi vị dư ngôn: Hữu Ðức Quán Thủ Tọa, ẩn Cảnh Tinh nham tam thập tải, ảnh bất xuất sơn. Long Học Cảnh Công vi quận. Ðặc dĩ Thụy Nham nghinh chi, Quán từ dĩ kệ viết:<br><br>
+            "Tam thập niên lai độc yển quan,<br>
+            Sứ phù na đắc đáo thanh san.<br>
+            Hưu tương tỏa mạt nhân gian sự,<br>
+            Hoán ngã nhất sinh lâm hạ nhàn".<br><br>
+            Sứ mệnh tái chí trung bất tựu. Cảnh Công thán viết: "Kim nhật Ẩn Sơn chi lưu dã". Vạn Am viết: "Bỉ hữu lão túc năng ký kỳ ngữ giả, nãi viết: Bất thể đạo bản, một nịch sinh tử, xúc cảnh sinh tâm, tùy tình động niệm, lang tâm hồ ý, xiểm hành cuống nhân, phụ thế a dung, tuẫn danh cẩu lợi, quai chân trục vọng, bối giác hiệp trần, lâm hạ đạo nhân, chung bất vi dã". Dư viết: "Quán diệc Tăng trung gián khí dã".
+            <div class="source">— Dật Sự.</div>
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p><span class="kw-good">Tuyết Ðường</span> nói: <span class="kw-good">Vạn Am</span><sup>381</sup> đưa Cao Am qua chùa Thiên Thai, lúc trở về nói với ta rằng: "Có <span class="kw-good">Ðức Quán</span><sup>382</sup> Thủ Tọa ở ẩn dật trong núi Cảnh Tinh đã ba mươi năm trời, không hề bước chân ra khỏi núi.</p>
+            
+            <p>Quan Quận Thú Long Học Cảnh Công, đặc biệt ưu ái, muốn đón ngài về chùa Thụy Nham, Ðức Quán viết bài kệ từ chối:</p>
+            
+            <div class="poem">
+                Ba mươi năm trọn lánh trần ai,<br>
+                Bỗng được quan sai sứ<sup>383</sup> lại mời.<br>
+                Việc vụn nhân gian đừng đổi chác,<br>
+                Ðời nhàn rừng núi cuộc đời tôi.
+            </div>
+
+            <p>Cảnh Công lại sai sứ đến lần thứ hai, nhưng ngài vẫn cố từ. Cảnh Công than: "Ðó là dòng của <span class="kw-good">Ẩn Sơn</span><sup>384</sup> ngày nay vậy".</p>
+            
+            <p>Vạn An nói: "Chùa Thiên Thai có bậc lão Tăng, ghi lại được lời nói của Ðức Quán Thủ Tọa rằng: Chẳng liễu được gốc đạo, chìm đắm bể sanh tử. Xúc cảnh liền sanh tâm, tùy tình động niệm dấy. Tâm ý như hổ lang, xiểm nịnh lừa dối người. Cậy thế lực a tòng, theo danh và trục lợi. Bỏ chân theo đuổi vọng, trái giác hợp với trần. Ðều là những việc mà người tu đạo nơi rừng núi, trọn chẳng bao giờ làm".</p>
+            
+            <div class="conclusion">
+                Ta nói: "Ðức Quán cũng là một anh tài<sup>385</sup> trong hàng Tăng".
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">(381) Vạn Am (萬庵):</span> Thiền sư Vạn Am Đạo Nhan (1094-1164), một bậc danh tăng đời Tống, bạn đạo của Tuyết Đường và Cao Am.</li>
+                <li><span class="note-num">(382) Đức Quán (德觀):</span> Tên của vị Thủ tọa tu hành ẩn dật, đạo hạnh cao thâm, không màng danh lợi hay quyền tước.</li>
+                <li><span class="note-num">(383) Sứ phù (使符):</span> Phù tiết, lệnh bài của sứ giả do quan phủ phái đến để nghênh thỉnh. Chốn thanh sơn u tịch vốn không có chỗ cho những thứ đại diện cho quyền lực thế gian này bước tới.</li>
+                <li><span class="note-num">(384) Ẩn Sơn (隱山):</span> Tức Thiền sư Ẩn Sơn thời nhà Đường, đệ tử của Triệu Châu, nổi tiếng với hạnh ẩn cư tu hành nghiêm mật, từ chối mọi sự thỉnh cầu ra hoằng pháp hay nhận chức vụ để giữ gìn đạo nghiệp thanh tịnh.</li>
+                <li><span class="note-num">(385) Anh tài (Gián khí / Gian khí - 間氣):</span> Từ Hán Việt "Gián khí" chỉ người bẩm thụ được cái khí tinh anh, tốt đẹp khác thường của trời đất sinh ra, xuất chúng phi phàm. Ý Tuyết Đường ca ngợi Đức Quán là một bậc kiệt xuất, thanh cao hiếm có trong hàng Tăng lữ.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

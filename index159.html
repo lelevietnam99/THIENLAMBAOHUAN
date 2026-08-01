@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Dật Sự - Thiền Lâm Bảo Huấn (Bài 159)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc */
+        .container::after {
+            content: "寶訓"; /* Bảo Huấn */
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif; 
+            font-size: 1.6em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Superscript (Chú thích số) */
+        sup {
+            color: #d4af37;
+            font-size: 0.65em;
+            padding-left: 2px;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; 
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; 
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.25em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.4em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1.05em; line-height: 1.75; }
+            .container::after { font-size: 3em; right: 20px; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Thiền Lâm Bảo Huấn - Bài 159</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            雪堂曰：高庵住雲居。普雲圓為首座。一才僧為書記。白楊順為藏主。通烏頭為知客。賢真牧為維那。華姪為副寺。用姪為監寺。皆是有德業者。用姪尋常廉約，不點常住油。華姪因戲之曰：「異時作長老，須是鼻孔端正始得，豈可以此為得耶？」用姪不對。用姪處己雖儉，與人甚豐。接納四來，略無倦色。高庵日日見之曰：「監寺用心固難得。更須照管常住，勿令疏失。」用姪曰：「在某失為小過。在和尚尊賢待士，海納山容，不問細微成大德。」高庵笑而已。故叢林有用大盌之稱。<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 逸事</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Tuyết Ðường viết: Cao Am trụ Vân Cư. Phổ Vân Viên vi Thủ tọa. Nhất Tài Tăng vi Thư ký. Bạch Dương Thuận vi Tạng chủ. Thông Ô Ðầu vi Tri khách. Hiền Chân Mục vi Duy Na. Hoa Ðiệt vi Phó tự. Dụng Ðiệt vi Giám tự. Giai thị hữu đức nghiệp giả. Dụng Ðiệt tầm thường liêm ước bất điểm thường trụ du. Hoa Ðiệt nhân hý chi viết: "Dị thời tố Trưởng lão, tu thị tỷ khổng đoan chính thủy đắc, khởi khả dĩ thử vi đắc da?". Dụng Ðiệt bất đối. Dụng Ðiệt xử kỷ tuy kiệm, dữ nhân thậm phong, tiếp nạp tứ lai, lược vô quyện sắc. Cao Am nhật nhật kiến chi viết: "Giám tự dụng tâm cố nan đắc. Cánh tu chiếu quản thường trụ vật linh sơ thất". Dụng Ðiệt viết: "Tại mỗ thất vi tiểu quá. Tại Hòa thượng tôn hiền đãi sĩ, hải nạp sơn dung, bất vấn tế vi thành vi đại đức". Cao Am tiếu nhi dĩ. Cố tùng lâm hữu Dụng Ðại Oản chi xưng.
+            <div class="source">— Dật Sự.</div>
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p><span class="kw-good">Tuyết Ðường</span> nói: <span class="kw-good">Cao Am</span> khi trụ trì chùa Vân Cư. Phổ Vân Viên<sup>358</sup> làm Thủ tọa<sup>359</sup>. Nhất Tài Tăng<sup>360</sup> làm Thư ký<sup>361</sup>. Bạch Dương Thuận<sup>362</sup> làm Tạng chủ<sup>363</sup>. Thông Ô Ðầu<sup>364</sup> làm Tri khách<sup>365</sup>. Hiền Chân Mục<sup>366</sup> làm Duy Na<sup>367</sup>. Hoa Ðiệt<sup>368</sup> làm chức Phó tự<sup>369</sup>. Dụng Ðiệt<sup>370</sup> làm chức Giám tự<sup>371</sup>. Ðều là những vị gồm đủ đức nghiệp.</p>
+            
+            <p>Dụng Ðiệt là người luôn luôn thanh liêm kiệm ước, không thắp đèn dầu của thường trụ. Hoa Ðiệt thấy thế nói bỡn rằng: "Một ngày kia, ông làm Trưởng lão, cần phải có người hổng mũi ngay thẳng<sup>372</sup> mới được, đâu có thể lấy việc nhỏ này làm chỗ sở đắc vậy ư?". Dụng Ðiệt không đáp lại.</p>
+            
+            <p>Dụng Ðiệt tuy tiết kiệm với bản thân, nhưng đối xử với người rất hậu, tiếp đãi thu nạp hàng nột tử từ bốn phương, lại không tỏ lộ dáng điệu mệt nhọc. Một hôm Cao Am thấy vậy liền nói: "Chỗ dụng tâm của Giám tự thực khó ai có được. Nhưng cần phải soi xét tới công việc của thường trụ, chớ để cho sơ khoáng thất thố".</p>
+            
+            <p>Dụng Diệt thưa: "Ở phần tôi có chỗ sơ sót cũng chỉ là phần lỗi nhỏ. Còn ở phần Hòa thượng phải tôn người hiền đãi kẻ sĩ, độ lượng lớn hàm chứa như bể cả, tâm bao dung như núi cao, chẳng hỏi đến việc nhỏ bé, thực là người có đức lớn!". Cao Am mỉm cười.</p>
+            
+            <div class="conclusion">
+                Vì thế nên có tên là "Dụng Ðại Oản" trong chốn tùng lâm.
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">(358) Phổ Vân Viên:</span> Tức Thiền sư Viên ở Phổ Vân.</li>
+                <li><span class="note-num">(359) Thủ tọa:</span> Vị tăng đứng đầu đại chúng, có đạo hạnh cao thâm, thay mặt vị Trụ trì để hướng dẫn và dạy dỗ đồ chúng.</li>
+                <li><span class="note-num">(360) Nhất Tài Tăng:</span> Vị sư tên Tài ở am Nhất.</li>
+                <li><span class="note-num">(361) Thư ký:</span> Chức vụ phụ trách việc ghi chép, sổ sách, thư từ văn bản trong thiền môn.</li>
+                <li><span class="note-num">(362) Bạch Dương Thuận:</span> Tức Thiền sư Thuận ở núi Bạch Dương.</li>
+                <li><span class="note-num">(363) Tạng chủ:</span> Người quản lý kinh tạng, kho sách, trông coi việc lưu trữ và đọc tụng kinh điển.</li>
+                <li><span class="note-num">(364) Thông Ô Đầu:</span> Tức Thiền sư Thông. "Ô đầu" có thể là biệt danh chỉ diện mạo hoặc đặc điểm cá nhân.</li>
+                <li><span class="note-num">(365) Tri khách:</span> Chức vụ chuyên lo việc giao thiệp, tiếp đón khách khứa và tăng ni thập phương đến viếng chùa.</li>
+                <li><span class="note-num">(366) Hiền Chân Mục:</span> Tức Thiền sư Hiền.</li>
+                <li><span class="note-num">(367) Duy na:</span> Chức vụ quản lý kỷ luật, nghi lễ và các hoạt động sinh hoạt thường nhật của đại chúng trong tự viện.</li>
+                <li><span class="note-num">(368) Hoa Điệt:</span> Tức Thiền sư Ứng Am Đàm Hoa. "Điệt" nghĩa là cháu trong đạo, cách xưng hô thân mật của bậc tôn túc.</li>
+                <li><span class="note-num">(369) Phó tự:</span> Chức vụ phụ tá, giúp việc trực tiếp cho Giám tự.</li>
+                <li><span class="note-num">(370) Dụng Điệt:</span> Tức Thiền sư Dụng. Người sau này được xưng tụng là "Dụng Đại Oản" (Dụng bát lớn).</li>
+                <li><span class="note-num">(371) Giám tự:</span> Chức vụ Tri sự, quản lý và điều hành mọi việc hành chính, tạp vụ, hậu cần trong tự viện.</li>
+                <li><span class="note-num">(372) Hổng mũi ngay thẳng (tỷ khổng đoan chính):</span> Nghĩa là khí độ đường hoàng, bao dung, không soi mói chấp nhặt tiểu tiết. Ứng Am Đàm Hoa đùa rằng Dụng Điệt tằn tiện quá thì khó có được khí chất oai nghi rộng rãi của một bậc Trưởng lão. Nhưng thực tế Dụng Điệt tuy khắc kỷ nhưng lại rất độ lượng với người.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
