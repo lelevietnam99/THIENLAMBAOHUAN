@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Thư gởi Bảo Hòa Thượng - Đoạn 195 (Có Hán Tự)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 850px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc (Đổi thành chữ Nạp Hải) */
+        .container::after {
+            content: "納海"; /* Nạp Hải */
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.6em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Superscript (Chú thích số) */
+        sup {
+            color: #d4af37;
+            font-size: 0.65em;
+            padding-left: 2px;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; /* Vàng - Bậc thánh nhân/Đạo đức */
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; /* Đỏ nhạt - Kẻ ác quân/Thiếu đạo đức */
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.25em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.4em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1.05em; line-height: 1.75; }
+            .container::after { font-size: 3em; right: 20px; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Thư Gởi Bảo Hòa Thượng</h1>
+
+        <!-- Phần 1: Hán Tự (Đã được phục hồi) -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            妙喜曰：古人見善則遷，有過則改，修德遵行，思免無咎。所患莫甚於不知其惡。所美莫善於好聞其過。然豈古人而才智不足識見不明，而若是耶。誠欲使後世自廣而狹於人者為戒也。夫叢林之廣四海之眾，非一人所能獨知。必資左右耳目思慮，乃能盡其義理善其人情。苟或尊居自重，謹細務忽大體，賢者不知，不肖者不察，事之非不改，事或是不從，出意狂為，無所忌憚。此誠禍害之機，安得不懼。或左右果無可諮詢者，猶宜取法於先聖，豈可如嚴城堅兵無自而入耶。此殆非所謂納百川而成大海也。<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 與寶和尚書 (Dữ Bảo Hòa Thượng thư)</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Diệu Hỷ viết: Cổ nhân kiến thiện tắc thiên, hữu quá tắc cải, tu đức tuân hành, tư miễn vô cữu. Sở hoạn mạc thậm ư bất tri kỳ ác. Sở mỹ mạc thiện ư hiếu văn kỳ quá. Nhiên khởi cổ nhân nhi tài trí bất túc thức kiến bất minh, nhi nhược thị da. Thành dục sử hậu thế tự quảng nhi hiệp ư nhân giả vi giới dã. Phù tùng lâm chi quảng tứ hải chi chúng, phi nhất nhân sở năng độc tri. Tất tư tả hữu nhĩ mục tư lự, nãi năng tận kỳ nghĩa lý thiện kỳ nhân tình. Cẩu hoặc tôn cư tự trọng, cẩn tế vụ hốt đại thể, hiền giả bất tri, bất tiếu giả bất sát, sự chi phi bất cải, sự hoặc thị bất tòng, xuất ý cuồng vi, vô sở kị đạn. Thử thành họa hại chi cơ, an đắc bất cụ. Hoặc tả hữu quả vô khả tư tuân giả, do nghi thủ pháp ư Tiên thánh, khởi khả như nghiêm thành kiên binh vô tự nhi nhập da. Thử đãi phi sở vi nạp bách xuyên nhi thành đại hải dã.
+            <div class="source">— Dữ Bảo Hòa Thượng thư.</div>
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p><span class="kw-good">Diệu Hỷ</span> nói: <span class="kw-good">Cổ nhân</span> thấy điều thiện thời làm, thấy có lỗi thời đổi. Sửa đức nghiệp noi chính hạnh, nghĩ sao tránh khỏi lỗi lầm. Lo chẳng gì lớn hơn ở chỗ không biết được điều xấu của mình. Ðẹp chẳng gì tốt hơn ở chỗ thích được nghe điều lỗi của mình.</p>
+            
+            <p>Song, đâu có phải tài trí của cổ nhân không đầy đủ, kiến thức của cổ nhân không sáng suốt lại làm như thế vậy ư? Quả thật, cổ nhân chỉ muốn cho những người ở sau này có tính tự rộng mình mà lại hẹp ở người, phải lấy đó làm điều răn vậy.</p>
+
+            <p>Ôi! Chỗ quảng đại của tùng lâm, nơi qui tụ chúng nhân trong bốn biển, không phải là việc ở một người có thể biết hết được, mà phải cần đến tai mắt tâm tư của những người tả hữu phù trì, mới suốt hết được nghĩa lý, mới phù hợp được nhân tình. Nếu, hoặc giả có người chỉ biết tự trọng ở ngôi tôn, chỉ cẩn thận ở việc nhỏ, lại khinh hốt đại thể, chẳng biết đến người hiền, chẳng xét tới kẻ ngu, việc làm trái không chịu đổi, việc làm phải lại không theo, buông ý làm càn, không chút kiêng sợ. Thì đó thật là cái nền tảng của họa hại, sao được không sợ hãi?</p>
+            
+            <p>Hoặc giả bên tả hữu mình không có người để hỏi han, cũng còn phải bắt chước khuôn phép của bậc <span class="kw-good">Tiên thánh</span>, đâu có thể như thành trì kiên cố, binh sĩ gan lỳ, không có thể nương từ ở một nơi nào mà xâm nhập được vậy ư? Nếu làm như vậy thì không có thể bảo rằng nhận nước trăm sông để tạo thành biển cả được.</p>
+            
+            <div class="conclusion">
+                "Biển lớn nhờ dung nạp trăm sông, người làm lớn nhờ lắng nghe điều lỗi."
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">(421) Bảo Hòa Thượng (寶和尚):</span> Tức Thiền sư Bảo, một vị trụ trì có danh vọng đương thời. Bức thư này được ngài Đại Huệ Tông Cảo viết để khuyên răn về đạo lý làm người lãnh đạo, đứng đầu chốn thiền môn tùng lâm.</li>
+                <li><span class="note-num">Kiến thiện tắc thiên, hữu quá tắc cải (見善則遷，有過則改):</span> Thấy điều thiện thì thay đổi để làm theo, có lỗi lầm thì quyết tâm sửa chữa. Đây là đạo lý tu thân cơ bản của cổ nhân.</li>
+                <li><span class="note-num">Nạp bách xuyên nhi thành đại hải (納百川而成大海):</span> Biển có thể trở nên vĩ đại là nhờ dung nạp nước từ hàng trăm con sông đổ về. Ý nói người làm lớn (trụ trì, lãnh đạo) phải có tấm lòng khoan dung, rộng lượng, biết hạ mình lắng nghe ý kiến từ nhiều phía.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

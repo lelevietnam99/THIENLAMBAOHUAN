@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Nhất Thiệp Ký - Đoạn 190 (Có Hán Tự)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 820px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc (Đổi thành chữ Đại Khí) */
+        .container::after {
+            content: "大器"; /* Đại Khí */
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.6em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Superscript (Chú thích số) */
+        sup {
+            color: #d4af37;
+            font-size: 0.65em;
+            padding-left: 2px;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; /* Vàng - Bậc thánh nhân/Đạo đức */
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; /* Đỏ nhạt - Kẻ ác quân/Thiếu đạo đức */
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.25em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.4em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1.05em; line-height: 1.75; }
+            .container::after { font-size: 3em; right: 20px; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Trích Nhất Thiệp Ký</h1>
+
+        <!-- Phần 1: Hán Tự (Đã được phục hồi) -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            山堂曰：李商老言：「妙喜氣度凝遠，節義過人，好學不倦。與老夫相從寶峰近四五載，十日不見必遣人至問。老夫舉家病腫，妙喜過舍躬自煎煮，如子弟事父兄禮。既歸，元首座責之，妙喜唯唯受教。識者知其大器。湛堂嘗曰：『杲侍者再來人也，山僧惜不及見。』湛堂遷化，妙喜繭足千里，訪無盡居士於渚宮求塔銘。湛堂末後一段光明，妙喜之力也。」<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 一葉記 (Nhất Thiệp Ký)</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Sơn Ðường viết: Lý Thương lão ngôn: "Diệu Hỷ khí độ ngưng viễn tiết nghĩa quá nhân, hiếu học bất quyện. Dữ lão phu tương tòng Bảo Phong cận tứ ngũ tải, thập nhật bất kiến tất khiển nhân chí vấn. Lão phu cử gia bệnh thũng. Diệu Hỷ quá xá cung tự tiên chử, như tử đệ sự phụ huynh lễ. Ký qui, Nguyên Thủ Tọa trách chi. Diệu Hỷ dụy dụy thụ giáo. Thức giả tri kỳ đại khí. Trạm Ðường thường viết: "Cảo Thị giả tái lai nhân dã, sơn tăng tích bất cập kiến". Trạm Ðường thiên hóa. Diệu Hỷ kiển túc thiên lý. Phỏng Vô Tận cư sĩ ư Chử Cung cầu tháp minh. Trạm Ðường mạt hậu nhất đoạn quang minh, diệu Hỷ chi lực dã".
+            <div class="source">— Nhất Thiệp Ký.</div>
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p><span class="kw-good">Sơn Ðường</span> nói: <span class="kw-good">Lý Thương lão</span><sup>413</sup> thường nói: "<span class="kw-good">Diệu Hỷ</span> là người có đại khí, độ lượng cô đọng sâu xa, tiết nghĩa hơn người, hiếu học không biết mỏi. Ngài với lão phu cùng tới Bảo Phong, và ở đây gần bốn, năm năm trời, cứ trong khoảng mười ngày mà không gặp nhau, tất ngài khiến người tới hỏi thăm.</p>
+            
+            <p>Lão phu bất hạnh cả nhà bị bệnh phù thũng. <span class="kw-good">Diệu Hỷ</span> tới tận nhà chăm nom săn sóc, tự ngài sắc thuốc nấu cơm, cư xử như nghi lễ đệ tử đối với bậc phụ huynh không khác. Khi ngài trở về chùa, <span class="kw-good">Nguyên Thủ Tọa</span><sup>414</sup> quở trách ngài, nhưng ngài chỉ vâng vâng dạ dạ, kính nghe lời thầy dạy bảo. Thức giả thấy thế, biết <span class="kw-good">Diệu Hỷ</span> là người có đại khí.</p>
+
+            <p><span class="kw-good">Trạm Ðường</span> thường nói: "<span class="kw-good">Cảo Thị giả</span> (Diệu Hỷ) là người tái lai (ứng thế), sơn Tăng rất tiếc không được gặp". Khi Trạm Ðường viên tịch, Diệu Hỷ đi bộ đường xa ngàn dặm, hai chân bị sưng lên như tổ kén, tìm đến <span class="kw-good">Vô Tận cư sĩ</span> ở đất Chử Cung, nhờ làm bài Minh khắc vào tháp của ngài Trạm Ðường.</p>
+            
+            <div class="conclusion">
+                Quãng đời sáng chói cuối cùng của Trạm Ðường là nhờ sức của Diệu Hỷ vậy.
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">(413) Lý Thương lão (李商老):</span> Cư sĩ Lý Thương, một vị học giả uyên bác thời Tống, bạn đạo thân thiết của Thiền sư Đại Huệ Tông Cảo.</li>
+                <li><span class="note-num">(414) Nguyên Thủ Tọa (元首座):</span> Vị Thủ tọa tên Nguyên (người đứng đầu trong chúng tăng sau Trụ trì) tại tự viện nơi Diệu Hỷ tu học.</li>
+                <li><span class="note-num">Diệu Hỷ (妙喜) / Cảo Thị giả (杲侍者):</span> Tức Thiền sư Đại Huệ Tông Cảo (1089-1163), một thiền sư lỗi lạc đời Tống, người có công lớn hoằng dương pháp Thiền Thoại Đầu. Khi chưa làm trụ trì, ngài giữ chức Thị giả (chăm sóc thầy), tên là Cảo.</li>
+                <li><span class="note-num">Trạm Đường (湛堂):</span> Tức Thiền sư Trạm Đường Văn Chuẩn, một trong những ân sư lớn đã rèn luyện và có ảnh hưởng sâu sắc đến sự tu học của Đại Huệ Tông Cảo lúc sơ cơ.</li>
+                <li><span class="note-num">Vô Tận cư sĩ (無盡居士):</span> Tức Trương Thương Anh (Zhang Shangying), một vị thừa tướng thời Bắc Tống và là một cư sĩ mộ đạo Phật sâu sắc, thường được các cao tăng kính trọng nhờ viết bia minh.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

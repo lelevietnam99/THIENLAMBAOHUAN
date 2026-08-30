@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Trí Lâm Tập - Đoạn 207 (Có Hán Tự)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 850px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc (Đổi thành chữ Chánh Khí) */
+        .container::after {
+            content: "正氣"; /* Chánh Khí */
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.6em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Superscript (Chú thích số) */
+        sup {
+            color: #d4af37;
+            font-size: 0.65em;
+            padding-left: 2px;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; /* Vàng - Bậc thánh nhân/Đạo đức */
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; /* Đỏ nhạt - Kẻ ác quân/Thiếu đạo đức */
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.25em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.4em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1.05em; line-height: 1.75; }
+            .container::after { font-size: 3em; right: 20px; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Trích Lư Sơn Trí Lâm Tập</h1>
+
+        <!-- Phần 1: Hán Tự (Đã được phục hồi) -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            萬庵顏和尚曰：妙喜先師初住徑山。因夜參，持論諸方，及曹洞宗旨不已。次日音首座謂先師曰：「夫出世利生素非細事。必欲扶振宗風，當隨時以救弊，不必取目前之快。和尚前日作禪和子持論諸方，猶不可妄，況今登寶華王座，稱善知識耶？」先師曰：「夜來一時之說焉。」首座曰：「聖賢之學本於天性，豈可卒然！」先師稽首謝之。首座猶說之不已。<br>
+            萬庵曰：「先師竄衡陽，賢侍者錄貶詞，揭示僧堂前。衲子如失父母，涕泗愁歎，居不遑處。音首座詣眾寮白之曰：『人生禍患不可苟免。使妙喜平生如婦人女子，碌碌下品，緘默不言，固無今日之事。況先聖所應為者不止於是。爾等何苦自傷。昔慈明、琅琊、谷泉、大愚結伴參汾陽。適當西北用兵。遂易衣混火隊中往。今徑山、衡陽相去不遠。道路絕間關，山川無險阻。要見妙喜復何難乎！』由是一眾寂然。翌日相繼而去。」<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 廬山智林集 (Lư Sơn Trí Lâm Tập)</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Vạn Am Nhan Hòa thượng viết: Diệu Hỷ tiên sư sơ trụ Kính Sơn. Nhân dạ tham, trì luận chư phương, cập Tào Ðộng tôn chỉ bất dĩ. Thứ nhật Âm Thủ Tọa vi tiên sư viết: "Phù xuất thế lợi sinh tố phi tế sự. Tất dục phù chấn tông phong, đương tùy thời dĩ cứu tệ, bất tất thủ mục tiền chi khoái. Hòa thượng tiền nhật tác thiền hòa tử trì luận chư phương, do bất khả vọng, huống kim đăng Bảo Hoa Vương tọa, xưng thiện trí thức da". Tiên sư viết: "Dạ lai nhất thời chi thuyết yên". Thủ tọa viết: "Thánh hiền chi học bản ư thiên tính, khởi khả thốt nhiên!". Tiên sư khể thủ tạ chi. Thủ Tọa do thuyết chi bất dĩ.<br><br>
+            Vạn Am viết: "Tiên sư thoán Hành Dương. Hiền thị giả lục biếm từ, yết thị Tăng đường tiền. Nột tử như thất phụ mẫu, thế tứ sầu thán, cư bất hoàng xứ". Âm Thủ Tọa nghệ chúng liêu bạch chi viết: "Nhân sinh họa hoạn bất khả cẩu miễn. Sử Diệu Hỷ bình sinh như phụ nhân nữ tử, lục lục hạ phẩm, giam mặc bất ngôn, cố vô kim nhật chi sự. Huống Tiên thánh sở ưng vi giả bất chỉ ư thị. Nhĩ đẳng hà khổ tự thương. Tích Từ Minh, Lang Gia, Cốc Tuyền, Ðại Ngu kết bạn tham Phần Dương. Thích đương tây bắc dụng binh. Toại dịch y hỗn hỏa đội trung vãng. Kim Kính Sơn, Hành Dương tương khứ bất viễn. Ðạo lộ tuyệt gian quan, sơn xuyên vô hiểm trở. Yếu kiến Diệu Hỷ phục hà nan hồ!". Do thị nhất chúng tịch nhiên. Dực nhật tương kế nhi khứ.
+            <div class="source">— Lư Sơn Trí Lâm Tập.</div>
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p><span class="kw-good">Vạn Am Nhan Hòa thượng</span><sup>428</sup> nói: Diệu Hỷ tiên sư lúc mới ở chùa Kính Sơn, nhân một buổi dạ tham, bàn luận đến công việc ở các nơi, và tôn chỉ tông <span class="kw-good">Tào Ðộng</span><sup>429</sup> rất là sôi nổi. Ngày hôm sau <span class="kw-good">Âm Thủ Tọa</span><sup>430</sup> bảo tiên sư rằng: "Ôi! Việc ra đời độ sanh, vốn không phải là việc nhỏ. Ông nếu muốn phù trì chấn hưng tôn giáo nên phải tùy thời để cứu vãn tệ hại, bất tất phải lấy việc vui trước mắt. Ngay như hôm qua Hòa thượng làm vị Tăng bàn luận công việc các nơi cũng còn không thể nói hồ đồ được, nữa là hôm nay lên tòa Bảo Hoa Vương, xưng là thiện trí thức vậy ư?".</p>
+            
+            <p>Tiên sư nói: "Ðêm qua chỉ là sự bàn luận nhất thời mà thôi". Thủ Tọa nói: "Cái học của Thánh hiền vốn ở thiên tính, đâu có thể khinh suất được vậy?". Tiên sư cúi đầu tạ lễ. Thủ Tọa còn nói mãi không thôi.</p>
+
+            <p>Vạn Am nói: Tiên sư khi bị đày ở đất <span class="kw-bad">Hành Dương</span><sup>431</sup>. <span class="kw-good">Hiền thị giả</span><sup>432</sup> chép lời bá cáo bị đày đó, yết thị trước Tăng đường, các nột tử nghe biết ai nấy đều đau khổ như người mất cha mẹ. Âm Thủ Tọa tới trước phòng Tăng chúng biện bạch rõ về việc đó rằng: "Họa hoạn của con người, không ai tránh khỏi. Ví khiến bình sinh, <span class="kw-good">Diệu Hỷ</span> giống đàn bà con gái, chịu đựng ở địa vị thấp kém, ngậm miệng làm thinh không nói, cố nhiên sẽ không xảy ra sự việc như ngày nay. Huống hồ chỗ phải làm của tiên sư, lại không phải là ở chỗ đó. Các ông cớ sao phải tự làm khổ đau thương?"</p>
+            
+            <p>"Xưa kia <span class="kw-good">Từ Minh, Lang Gia, Cốc Tuyền</span><sup>433</sup> và <span class="kw-good">Ðại Ngu</span><sup>434</sup> kết bạn, cùng tới tham học ngài <span class="kw-good">Phần Dương</span><sup>435</sup>, gặp lúc triều đình đem quân đóng khắp miền tây bắc để tảo thanh giặc giã, các ngài phải đổi áo lẫn vào đám quân lính mà đi. Nay từ Kính Sơn đến Hành Dương cách nhau không xa, đường lối không gián đoạn, núi sông không hiểm trở, nếu chúng Tăng muốn đến yết kiến Diệu Hỷ thì có khó khăn gì?".</p>
+            
+            <p>Vì thế mà cả chúng đều im lặng. Ngày hôm sau chúng Tăng cùng nối gót nhau đi tới thăm ngài Diệu Hỷ.</p>
+            
+            <div class="conclusion">
+                "Lời can gián thẳng thắn của Thủ tọa giúp bậc Trí thức thành tựu oai nghi. Tấm lòng tôn sư trọng đạo giúp nột tử vượt muôn ngàn hiểm trở."
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">(428) Vạn Am Nhan Hòa thượng (萬庵顏和尚):</span> Thiền sư Vạn Am Đạo Nhan, đệ tử đắc pháp của Đại Huệ Tông Cảo (Diệu Hỷ).</li>
+                <li><span class="note-num">(429) Tông Tào Động (曹洞宗):</span> Một trong 5 tông phái lớn của Thiền tông Trung Hoa. Diệu Hỷ thuộc dòng Lâm Tế, cực lực bài bác lối "Mặc chiếu thiền" của Tào Động, chủ trương pháp "Khán thoại đầu". Việc ngài bài xích công khai trên tòa giảng đã bị Âm Thủ Tọa khuyên can.</li>
+                <li><span class="note-num">(430) Âm Thủ Tọa (音首座):</span> Vị Thủ tọa cương trực tên Âm, người dám thẳng thắn khuyên can lỗi lầm nhỏ của ngài Diệu Hỷ, cũng là người đã động viên đại chúng đi tìm thầy lúc ngài Diệu Hỷ gặp nạn.</li>
+                <li><span class="note-num">(431) Hành Dương (衡陽):</span> Năm 1141, do liên quan đến vụ án của Trương Cửu Thành (người chống phe chủ hòa của Tể tướng Tần Cối), ngài Diệu Hỷ bị tước điệp độ, tước y bát và đày đi Hành Dương. Việc ngài dám lên tiếng vì đại nghĩa khiến chúng tăng vô cùng ngưỡng mộ.</li>
+                <li><span class="note-num">(432) Hiền thị giả (賢侍者):</span> Vị đệ tử làm thị giả theo hầu ngài Diệu Hỷ.</li>
+                <li><span class="note-num">(433-435) Từ Minh, Lang Gia, Cốc Tuyền, Đại Ngu, Phần Dương:</span> Đây đều là những bậc thạch trụ thiền môn vĩ đại của tông Lâm Tế thời trước. Các ngài từng bất chấp loạn lạc, chiến tranh (thời Tây Hạ), cải trang trà trộn vào quân đội chỉ để mong được đến bái kiến học đạo với Thiền sư Phần Dương Thiện Chiêu. Âm Thủ Tọa đã mượn điển tích này để khích lệ đại chúng vượt đường xa đi thăm ngài Diệu Hỷ.</li>
+                <li><span class="note-num">Dạ tham (夜參):</span> Trong bản phiên âm là "Dạ xam". Đây là nghi thức thuyết pháp, tham thiền vấn đáp vào buổi tối muộn tại các thiền viện.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
