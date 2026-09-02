@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Trí Lâm Tự - Đoạn 212 (Có Hán Tự)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 850px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc (Đổi thành chữ Trì Nguy) */
+        .container::after {
+            content: "持危"; /* Trì Nguy */
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.6em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Superscript (Chú thích số) */
+        sup {
+            color: #d4af37;
+            font-size: 0.65em;
+            padding-left: 2px;
+            font-weight: bold;
+            cursor: help;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; /* Vàng - Bậc thánh nhân/Đạo đức */
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; /* Đỏ nhạt - Kẻ ác quân/Thiếu đạo đức */
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.25em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.4em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1.05em; line-height: 1.75; }
+            .container::after { font-size: 3em; right: 20px; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Trích Trí Lâm Tự</h1>
+
+        <!-- Phần 1: Hán Tự (Đã được phục hồi) -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            萬庵顏和尚曰：比見叢林絕無老成之士。所至三百、五百一人為主，多人為伴據法王位，拈槌豎拂，互相欺誑，縱有談說不涉典章。疑其無老成人才也。夫出世利生，大佛揚化，非明心達本行解相應，巨敢為之。譬如有人妄號帝王，自取 chu diệt (自取誅滅). Huống phục pháp vương, như hà vọng thiết. Ô hô! Khứ Thánh du viễn, 水老鶴之屬, hựu phục tung hoành, sử Tiên thánh hóa môn, nhật tựu luân nịch. Ngô dục vô ngôn khả hồ. Thuộc am cư vô sự, điều trần thương phong bại giáo, vị hại thậm giả nhất nhị, lưu bá tùng lâm, tỷ hậu sinh vãn tiến, tri tiền bối căn căn nghiệp nghiệp, dĩ hạ phụ đại pháp vi tâm. Như băng lăng thượng hành, kiếm nhận thượng tẩu. Phi cẩu danh lợi dã. Tri ngã tội ngã, ngô vô từ yên.<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 智林寺 (Trí Lâm Tự)</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Vạn Am Nhan Hòa thượng viết: Tỷ kiến tùng lâm tuyệt vô lão thành chi sĩ. Sở chí tam bách, ngũ bách nhất nhân vi chủ, đa nhân vi bạn cứ pháp vương vị, niêm trùy thụ phất, hỗ tương khi cuống, túng hữu đàm thuyết bất thiệp điển chương. Nghi kỳ vô lão thành nhân dã. Phù xuất thế lợi sinh, đại Phật dương hóa, phi minh tâm đạt bản hành giải tương ưng, cự cảm vi chi. Thí như hữu nhân vọng hiệu đế vương, tự thủ chu diệt. Huống phục pháp vương, như hà vọng thiết. Ô hô! Khứ Thánh du viễn, Thủy Lão Hạc chi thuộc, hựu phục tung hoành, sử Tiên thánh hóa môn, nhật tựu luân nịch. Ngô dục vô ngôn khả hồ. Thuộc am cư vô sự, điều trần thương phong bại giáo, vị hại thậm giả nhất nhị, lưu bá tùng lâm, tỷ hậu sinh vãn tiến, tri tiền bối căn căn nghiệp nghiệp, dĩ hạ phụ đại pháp vi tâm. Như băng lăng thượng hành, kiếm nhận thượng tẩu. Phi cẩu danh lợi dã. Tri ngã tội ngã, ngô vô từ yên.
+            <div class="source">— Trí Lâm Tự.</div>
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p><span class="kw-good">Vạn Am Nhan Hòa thượng</span> nói: Gần đây ta thấy chốn <span class="kw-bad">tùng lâm</span>, tuyệt nhiên không có kẻ sĩ lão thành. Có nơi từ 300 đến 500 người, thì duy có một người làm chủ, còn nhiều người làm bạn, rồi nương vào <span class="kw-bad">ngôi vị pháp vương</span>, cũng đánh trùy vẫy phất, dối trá lẫn nhau, ví có nói bàn lại không hợp với kinh sách. Ðó là tùng lâm không có các bậc lão thành.</p>
+            
+            <p>Ôi! Ra đời lợi sinh, thay Phật tuyên dương giáo hóa, nếu không phải là người <span class="kw-good">minh tâm đạt bản</span>, làm và hiểu cùng ăn khớp với nhau, thì đâu dám kham đương việc đó. Ví như có người vọng xưng là Ðế vương, thì chắc chắn tự họ phải chuốc lấy tội tru diệt, huống chi lại là ngôi pháp vương, như thế nào lại dám trộm xưng càn bậy được sao?</p>
+
+            <p>Than ôi! Cách thời Phật càng xa, những người thuộc loại <span class="kw-bad">"Thủy Lão Hạc"</span><sup>444</sup> lại mặc sức tung hoành, khiến cho cửa giáo hóa của Tiên thánh ngày một đi tới chỗ đắm chìm, ta muốn không nói có thể vậy ư?</p>
+            
+            <p>Nay đang lúc Vạn Am Nhan này nhàn rỗi công việc, nên điều trần một vài sự kiện thương phong bại giáo, nó làm hại cho đạo pháp rất nhiều, để lưu bá trong chốn tùng lâm, khiến cho những kẻ <span class="kw-good">hậu sinh vãn tiến</span>, biết được rằng, những bậc tiền bối lúc nào cũng luôn luôn lo sợ, về nhiệm vụ đem tâm bảo vệ Phật pháp, <span class="kw-good">như người đi trên lớp băng mỏng, chạy trên đống gươm giáo</span>, chứ không phải là người tham cầu danh lợi vậy. Ai khen ta hoặc chê ta, ta đều không chối cãi.</p>
+            
+            <div class="conclusion">
+                "Gánh vác đại pháp như đi trên băng mỏng, đạp trên mũi gươm, giữ gìn tông phong trước thời mạt pháp."
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">Niêm trùy thụ phất (拈槌豎拂):</span> Cầm búa và giơ phất tử. Chỉ hành động thượng đường thuyết pháp của các vị tôn túc nhưng bị kẻ kém đức bắt chước làm màu mè.</li>
+                <li><span class="note-num">Minh tâm đạt bản (明心達本):</span> Thấu sáng tâm tính, đạt đến cội nguồn chân thật của Phật pháp.</li>
+                <li><span class="note-num">(444) Thủy Lão Hạc (水老鶴):</span> Hình ảnh ví von trong thiền tông để chỉ những kẻ sống lâu trong cửa thiền nhưng vô học, vô hạnh, ăn ngủ vô ích như con hạc già đứng ngẩn ngơ bên nước, không có giá trị hoằng pháp.</li>
+                <li><span class="note-num">Như băng lăng thượng hành, kiếm nhận thượng tẩu (如冰棱上行，劍刃上走):</span> Thất tình nơm nớp lo sợ, cẩn trọng tột độ của người tu hành chân chính khi gánh vác trọng trách của Phật pháp.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
