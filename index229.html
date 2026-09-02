@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Thực Lục - Đoạn 229 (Có Hán Tự)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 850px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc (Chữ Đạo Đức) */
+        .container::after {
+            content: "道德"; 
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.1em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.15em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; /* Vàng - Bậc thánh nhân/Đạo đức */
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; /* Đỏ nhạt - Kẻ ác quân/Thiếu đạo đức */
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            container-name: footnotes-title;
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.3em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1em; line-height: 1.75; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Trích Thực Lục</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            佛智位水庵曰：住持之體有四焉：一道德，二言行，三仁義，四禮法。道德言行乃教之本也，仁義禮法乃教之末也。無本不能立，無末不能成。先聖見學者不能自理，故建叢林以安之，立住持以統之。然則叢林之尊，非為住持。四事豐美非為學者。皆以佛祖之道故。是以善為住持者，必先尊道德守言行。能為學者必先尊仁義遵禮法。故住持非學者不立。學者非住持不成。住持與學者，如身之與臂，頭之與足，大小不稱而不會，乃相須而行也。故曰：「學者保於叢林，叢林保於道德！」。住持人無道德，則叢林相見既廢矣。<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 實錄 (Thực Lục)</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Phật Trí vị Thủy Am viết: Trụ trì chi tể hữu tứ yên: nhất đạo đức, nhị ngôn hành, tam nhân nghĩa, tứ lễ pháp. Ðạo đức ngôn hành nãi giáo chi bản dã, nhân nghĩa lễ pháp não giáo chi mạt dã. Vô bản bất năng lập, vô mạt bất năng thành. Tiên thánh kiến học giả bất năng tự trị, cố kiến tùng tâm dĩ an chi, lập trụ trì dĩ thống chi. Nhiên tắc tùng lâm chi tôn, phi vị trụ trì. Tứ sự phong mỹ phi vị học giả. Giai dĩ Phật Tổ chi đạo cố. Thị dĩ thiện vi trụ trì giả, tất tiên tôn đạo đức thủ ngôn hành. Năng vi học giả tất tiên tôn nhân nghĩa tuân lễ pháp. Cố trụ trì phi học giả bất lập. Học giả phi trụ trì bất thành. Trụ trì dữ học giả, do thân chi dữ tý, đầu chi dữ túc, đại tiểu bất xứng nhi bất hội, nãi tương tu nhi hành dã. Cố viết: "Học giả bảo ư tùng lâm, tùng lâm bảo ư đạo đức!". Trụ trì nhân vô đạo đức, tắc tùng lâm tương kiến ký phế hỹ.
+            <div class="source">— Thực Lục.</div>
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p><span class="kw-good">Phật Trí</span> bảo <span class="kw-good">Thủy Am</span>: Thực thể của <span class="kw-good">Trụ trì</span> có bốn điều: Đạo đức, ngôn hành, nhân nghĩa và lễ pháp.</p>
+            
+            <p><span class="kw-good">Đạo đức và ngôn hành</span> là gốc của sự giáo hóa, nhân nghĩa và lễ pháp là ngọn của sự giáo hóa. Không có gốc thì chẳng hay đứng được, không có ngọn thì chẳng hay thành được.</p>
+
+            <p>Bậc Tiên thánh thấy người học đạo không tự trị được, nên mới kiến lập tùng lâm để họ có chỗ an trụ, suy cử người trụ trì để thống lĩnh họ, nhưng vì cái tôn của tùng lâm không phải vì trụ trì. Cơm ăn, áo mặc, đồ dùng, thuốc thang đầy đủ, không phải vì người học đạo, mà đều là vì cái đạo của Phật Tổ.</p>
+
+            <p>Bởi thế, người khéo trụ trì trước hết phải <span class="kw-good">tôn đạo đức, giữ ngôn hành</span>, người khéo học đạo, tất nhiên phải giữ nhân nghĩa tuân đạo đức. Cho nên, nếu trụ trì không có người học đạo thì không thể thành lập. Trụ trì và người học đạo cũng như thân mình với cánh tay, đầu và chân, lớn nhỏ phải thích ứng mà không trái nhau mới có thể cùng nương vào nhau mà làm việc.</p>
+
+            <p>Nên nói: <span class="kw-good">"Người học đạo thì bảo thủ tùng lâm, tùng lâm thì giữ gìn đạo đức"</span>. Người trụ trì nếu không có đạo đức thì tùng lâm cũng hầu như tàn phế vậy.</p>
+            
+            <div class="conclusion">
+                "Đạo đức ngôn hành là gốc giáo hóa, tùng lâm và người học đạo nương nhau, trụ trì vô đức thì tùng lâm tàn phế."
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">Gốc và ngọn (Bản và Mạt):</span> Đạo đức và ngôn hành là nội tâm, bản chất bên trong (gốc); nhân nghĩa và lễ pháp là quy củ, uy nghi biểu hiện ra bên ngoài (ngọn). Gốc ngọn phải đầy đủ mới thành tựu được việc giáo hóa.</li>
+                <li><span class="note-num">Tứ sự phong mỹ:</span> Bốn nhu yếu phẩm bao gồm y phục, ăn uống, giường nằm và thuốc thang được cung cấp đầy đủ trong tùng lâm, tất cả đều vì phụng sự đạo pháp của Phật Tổ chứ không phải vì cá nhân tầm thường.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

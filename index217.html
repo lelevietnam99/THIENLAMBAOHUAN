@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Vạn Am Ngữ Lục - Đoạn 217 (Có Hán Tự)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 850px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc (Chữ Tông Phong) */
+        .container::after {
+            content: "宗風"; 
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.1em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.15em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; /* Vàng - Bậc thánh nhân/Đạo đức */
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; /* Đỏ nhạt - Kẻ ác quân/Thiếu đạo đức */
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phân vùng Chú thích */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.3em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1em; line-height: 1.75; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Trích Vạn Am Ngữ Lục</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            雲庵曰：少林初祖，衣缽雙傳。六祖衣旨不傳， thủ hành giải tương ứng thế kỳ gia nghiệp, Tổ đạo du quang tử tôn ích phồn. 大鑑之後，石頭、馬祖皆嫡孫，應般若多羅玄讖：「要ả而孫腳下行」 thị dã. 二大士玄言妙語， lưu bá hoàn khu, tiềm phù mật chứng giả tỷ tỷ hữu chỉ. Sư pháp ký chúng, học vô chuyên môn. 曹溪源流，派別為五，方 viên nhậm khí thuỷ thể thị đồng, các thiện giai thanh, lực hành kỷ nhậm. Ðẳng gian thùy nhất ngôn xuất nhất lệnh võng la học giả. 叢林鼎沸非苟爾然也。由是互相酬唱，顯微闡幽，或抑或 dương tá hựu pháp hóa. 語言無位，如煮木扎羹су thết đinh phạn, 與 hậu bối giảo tước mục vi niêm cổ. 其頌始自汾陽，寄雪竇橫其音，顯其指，uông dương hồ bất khả khai. 後之作者，持騁雪竇而為之，不顧 đạo đức chi hề nhược, 務以文 thái hoán lạn tương tiên為美，使後生晚進，不克見古人渾純大全之旨。嗚呼！予遊叢林及見先輩，非古人語 lục bất khán, 非百丈 hiệu lệnh bất thành. 豈特好古，蓋今之人不足法也。望通人達士，知我於言外可矣。<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 雲庵 (Vân Am)</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Vân Am viết: Thiếu Lâm Sơ Tổ, y bát song truyền. Lục Tổ y chỉ bất truyền, thủ hành giải tương ứng thế kỳ gia nghiệp, Tổ đạo du quang tử tôn ích phồn. Ðại Giám chi hậu, Thạch Ðầu, Mã Tổ giai đích tôn, ứng Bát Nhã Ða La huyền sấm: "Yếu giả nhi tôn cước hạ hành" thị dã. Nhị đại sĩ huyền ngôn diệu ngữ, lưu bá hoàn khu, tiềm phù mật chứng giả tỷ tỷ hữu chỉ. Sư pháp ký chúng, học vô chuyên môn. Tào Khê nguyên lưu, phái biệt vị ngũ, phương viên nhậm khí thuỷ thể thị đồng, các thiện giai thanh, lực hành kỷ nhậm. Ðẳng gian thùy nhất ngôn xuất nhất lệnh võng la học giả. Tùng lâm đỉnh phí phi cẩu nhiên dã. Do thị hỗ tương thù xướng, hiển vi xiển u, hoặc ức hoặc dương tá hựu pháp hóa. Ngữ ngôn vô vị, như chử mộc trát canh suy thiết đinh phạn, dữ hậu bối giảo tước mục vi niêm cổ. Kỳ tụng thủy tự Phần Dương, kỵ Tuyết Ðậu hoành kỳ âm, hiển kỳ chỉ, uông dương hồ bất khả khai. Hậu chi tác giả, trì sính Tuyết Ðậu nhi vi chi, bất cố đạo đức chi hề nhược, vụ dĩ văn thái hoán lạn tương tiên vi mỹ, sử hậu sinh vãn tiến, bất khắc kiến cổ nhân hồn thuần đại toàn chi chỉ. Ô hô! Dư du tùng lâm cập kiến tiền bối, phi cổ nhân ngữ lục bất khán, phi Bách Trượng hiệu lịnh bất thành. Khởi đặc hiếu cổ, cái kim chi nhân bất túc pháp dã. Vọng thông nhân đạt sĩ, tri ngã ư ngôn ngoại khả hỹ.
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p><span class="kw-good">Vân Am</span> nói: Từ Sơ Tổ (Ðạt Ma) chùa Thiếu Lâm, trao truyền tâm ấn thì gồm cả y bát, nhưng đến đời Lục Tổ (Huệ Năng), ngưng việc truyền y, mà chỉ lấy phần hành giải tương ứng để nối dõi gia nghiệp, tiếp sáng ngôi Tổ, con cháu ngày càng phồn thịnh.</p>
+            
+            <p>Thế nên, kế tiếp ngài Ðại Giám (Lục Tổ) có Thạch Ðầu, Mã Tổ đều là những cháu đích tôn, thật ứng với lời huyền sấm của <span class="kw-good">Bát Nhã Đa La</span>: "Cần nhờ vào cẳng chân của con cháu để đi", là nghĩa thế vậy.</p>
+
+            <p>Những huyền ngôn diệu ngữ của hai ngài đại sĩ trên, được lưu bá khắp trong thiên hạ, những người ngầm hợp được mật chứng ấy thường thường thấy xuất hiện khá nhiều. Vì pháp tu đạo của thầy đã nhiều, mà người học đạo lại không chuyên theo cùng một pháp môn nhất định. Thế nên, nguồn dòng của Tào Khê chia thành năm phái. Tuy là đồ dùng vuông tròn có khác, nhưng thể của nước cũng vẫn chỉ là một.</p>
+
+            <p>Ai nấy đều y cứ vào tiếng hay của phái mình, mà tận lực duy trì truyền bá. Bình thường tuy nói ra một lời, hay đưa ra một lệnh, cũng đều là những khuôn pháp mẫu mực cho người học đạo. Làm cho chốn tùng lâm được hưng thịnh không phải chỉ những có thế mà thôi.</p>
+
+            <p>Bởi thế, nên lại có sự thù xướng lẫn nhau để diễn nghĩa vi tế, mở chỗ u huyền, hoặc nén xuống, hoặc nâng lên để giúp đỡ cho pháp hóa. Những lời nói vô vị như nấu võ cây làm canh, thổi đinh sắt làm cơm, để kẻ hậu bối gậm nhấm, gọi đó là <span class="kw-bad">niêm cổ</span>. Tuy những lời niêm cổ này có bắt đầu từ thời ngài Phần Dương, nhưng đến thời Tuyết Đậu lại mở rộng lời nói đó, hiển rõ ý chỉ đó, làm cho nghĩa lý rộng mênh mang như biển cả không bờ.</p>
+
+            <p>Thế rồi, những tác giả ở sau lại bắt chước ngài Tuyết Đậu để trứ tác không hề đoái hoài chi đến phần đạo đức mà chỉ chuyên dùng <span class="kw-bad">lời văn cao kỳ bóng bẩy hoa mỹ</span> làm đẹp, khiến cho kẻ sinh sau tiến muộn không thể thấy được ý chỉ vẹn toàn thuần phác hồn nhiên của cổ nhân.</p>
+
+            <p>Than ôi! Ta đi thăm các chốn tùng lâm, và yết kiến các bậc tiền bối, <span class="kw-good">nếu không phải là ngữ lục của cổ nhân thì không xem, không phải là hiệu lệnh của Bách Trượng thì không làm</span>. Ðó không phải là ta đặc biệt hiếu cổ mà chỉ vì người đời nay, không đủ làm khuôn phép để ta theo đó vậy. Ta mong tất cả những bậc thông nhân đạt sĩ nên hiểu ý của ta ở ngoài lời nói.</p>
+            
+            <div class="conclusion">
+                "Giữ vững tông phong tiền bối, trọng thực chất đạo đức, chớ sa vào văn hoa bóng bẩy thời mạt pháp."
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">Bát Nhã Đa La (菩提達摩 - Bát Nhã Đa La):</span> Vị Tổ sư đời thứ 27 ở Ấn Độ, đồng thời là thầy truyền pháp cho Bồ Đề Đạt Ma. Ngài từng có lời huyền sấm tiên đoán về đời sau của dòng phái Tổ sư Trung Hoa.</li>
+                <li><span class="note-num">Năm phái Tào Khê (曹溪五家):</span> Chỉ năm tông phái lớn phát xuất từ dòng thiền Lục Tổ Huệ Năng (Tào Khê), bao gồm: Quy Tông, Lâm Tế, Tào Động, Vân Môn và Pháp Nhãn.</li>
+                <li><span class="note-num">Niêm cổ (拈古):</span> Hình thức dùng các công án hoặc câu nói của cổ nhân để vịnh thành kệ tụng, bình phẩm nhằm khai thị cho học chúng, bắt đầu thịnh hành từ thời Thiền sư Phần Dương Thiện Chiêu và phát triển mạnh qua Tuyết Đậu Trọng Hiển.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
