@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Khắc Bia Đá Chùa Cảnh Tinh - Đoạn 283 (Có Hán Tự)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 850px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc (Chữ Hưu Hưu) */
+        .container::after {
+            content: "休休"; 
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.3em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        /* Đoạn văn Âm Hán Việt & Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.15em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Khối thơ tiểu thiên */
+        .poem-block {
+            margin: 25px 0;
+            padding: 15px 25px;
+            background: rgba(212, 175, 55, 0.03);
+            border-left: 3px solid #d4af37;
+            border-radius: 2px;
+        }
+
+        .poem-title {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .poetry-content {
+            font-style: italic;
+            color: #f3e9dc;
+            line-height: 1.8;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; /* Vàng - Bậc chân tu/Đạo đức */
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phần Chú Thích & Từ Vựng */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.2em; padding: 15px; }
+            .dich-nghia { font-size: 1em; line-height: 1.75; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Khắc Bia Đá Chùa Cảnh Tinh</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            簡堂淳熙五年四月，自天台景星岩，再扶隱靜，給事吳公弗，逸老于休休堂，畫淵明詩集三千送行。<br>
+            - 其一：我自歸林下，已與世相疏。賴有善知識，時能過我廬。伴我說道話，愛我讀佛書. 卽位岩上去，我亦為高沙。便欲展我缽，隨事同飯疏。脫此塵俗累，長與岩石居。此岩固高矣，卓出山海圖。若比吾師高，此岩還不如。<br>
+            - 二：我生山窟裡，四面是嵒顏。有岩號景星，欲到知幾年。金水信其絕，一覽小眾山。更得師為主，二姚未期言。<br>
+            - 三：我家湖山上，觸目是林丘。若比茲山秀，培塿固難籌。雲山千裡辨，泉石四時流. 我今纔一到，已勝五湖遊。<br>
+            - 四：我年十一五，木末掛殘陽. 縱使身為逝，也能起久長. 尚記林間住，與師共末光. 雲乃暫出，遠近駭商皇。<br>
+            - 五：愛山端有素，麤俗亦可憐. 鑿手當塗郡，不識隱靜山. 師來又去，歸我複何言. 尚期無久住，歸送我殘年。<br>
+            - 六：師心如死灰，形面如槁木. 何為衲子歸，自響答空谷. 故我塵垢身，正待醍醐浴. 更願張佛燈，為我大明祝。<br>
+            - 七：扶初岩上樹，入夏總成陰. 幾年荊棘地，一旦成叢林. 我方與衲子，共聽海潮音. 人生多聚散，別離忽驚心。<br>
+            - 八：我與師來往，歲月雖未長. 相互行二老，風流亦異常. 師燕坐岩上，我方為餱糧. 倘師能早歸，此樂猶未央。<br>
+            - 九：紛紛學禪者，腰包競奔走. 才能說葛藤，私意便自負. 求其道德尊，如師該稀有. 願傳上乘人，榮光臨濟後。<br>
+            - 十：吾邑多駸徒，浩浩若雲海. 大機久已亡，賴有小機在. 矧更與一岑，純全兩無悔. 道路二老禪，海內共期待。<br>
+            - 十一：古無住 trì 事，但只傳法旨. 有能悟色空，便可超生死. 麤能昧本來，豈識西歸理. 邁涉坐禪床，佛法相何是。<br>
+            - 十二：增中有高增，士亦有高士. 我雖不為高，心麤能知止. 師是個中人，特患不為耳. 何幸我及師，俱是鄰家子。<br>
+            - 十三：師本窮和尚，我亦從秀才. 忍窮心已徹，老肯不歸來. 金師雖暫別，泉石莫相猜. 應緣聊復我，師豈有心哉。<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 景星岩石刻 (Cảnh Tinh Nham thạch khắc)</div>
+        </div>
+        
+        <!-- Phần 2: Dịch Nghĩa (Bao gồm 13 bài thơ họa theo Đào Uyên Minh) -->
+        <h2>2. Dịch Nghĩa & Mười Ba Bài Thơ Tiễn Chân</h2>
+        <div class="dich-nghia">
+            <p>Tháng tư niên hiệu <span class="kw-good">Thuần Hy năm thứ 5</span>, <span class="kw-good">Giản Đường</span> từ Cảnh Tinh Nham núi Thiên Thai trở lại chùa Ẩn Tĩnh. Quan Cấp sự Ngô Công Phất đang ẩn dật di dưỡng tuổi già ở Hưu Hưu Đường, liền họa theo vần thơ của Đào Uyên Minh gồm mười ba thiên để tiễn chân Giản Đường như sau:</p>
+
+            <div class="poem-block">
+                <div class="poem-title">1</div>
+                <div class="poetry-content">
+                    Từ khi bạn núi rừng,<br>
+                    Tôi cùng đời cách xa.<br>
+                    Nhờ có thiện trí thức,<br>
+                    Đôi lúc tới thăm nhà.<br>
+                    Thân tôi, nói chuyện đạo,<br>
+                    Mến tôi, đọc Phật đà.<br>
+                    Khi quay về trên núi,<br>
+                    Tôi cũng tiễn chân qua.<br>
+                    Thầy cho tôi thưởng thức,<br>
+                    Cơm rau vị đậm đà.<br>
+                    Thoát khỏi lụy trần tục,<br>
+                    Muốn ở núi ngâm nga.<br>
+                    Núi này cao cao ngất,<br>
+                    Vượt cả Sơn Hải Đồ.<br>
+                    Nhưng sánh cao đức thầy,<br>
+                    Núi này còn kém xa.
+                </div>
+            </div>
+
+            <div class="poem-block">
+                <div class="poem-title">2</div>
+                <div class="poetry-content">
+                    Tôi sinh trong hang núi,<br>
+                    Bốn mặt cao chênh vênh.<br>
+                    Có núi gọi Cảnh Tinh,<br>
+                    Muốn đến đã mấy lần.<br>
+                    Núi ấy thật kỳ tuyệt,<br>
+                    Mọi núi nhỏ quanh mình.<br>
+                    Lại có thầy làm chủ,<br>
+                    Nhị Diệu khó tả tranh.
+                </div>
+            </div>
+
+            <div class="poem-block">
+                <div class="poem-title">3</div>
+                <div class="poetry-content">
+                    Nhà tôi hồ trên núi,<br>
+                    Nhìn ra toàn núi rừng.<br>
+                    So cảnh đẹp của thầy,<br>
+                    Bên tôi khó sánh cùng.<br>
+                    Mây tỏa xa ngàn dặm,<br>
+                    Suối biếc chảy không ngừng.<br>
+                    Tôi tuy vừa mới tới,<br>
+                    Ngũ hồ cảnh sao bằng.
+                </div>
+            </div>
+
+            <div class="poem-block">
+                <div class="poem-title">4</div>
+                <div class="poetry-content">
+                    Bảy mươi lăm tuổi lẽ,<br>
+                    Tàn dương treo ngọn cây.<br>
+                    Ví rằng thân chưa mất,<br>
+                    Cũng chẳng được bao ngày.<br>
+                    Còn mong ở rừng núi,<br>
+                    Cùng thầy hưởng dư quang.<br>
+                    Cô vân vụt biến mất,<br>
+                    Gần xa thấy bàng hoàng.
+                </div>
+            </div>
+
+            <div class="poem-block">
+                <div class="poem-title">5</div>
+                <div class="poetry-content">
+                    Yêu núi là số phận,<br>
+                    Nợ tục cũng đáng thương.<br>
+                    Xưa coi Đương Đồ Quận,<br>
+                    Núi Ẩn Tĩnh đâu tường.<br>
+                    Khen thầy nay đi lại,<br>
+                    Lòng tôi thấy ngỡ ngàng.<br>
+                    Mong đừng đi lâu lắm,<br>
+                    Về thăm tôi năm tàn.
+                </div>
+            </div>
+
+            <div class="poem-block">
+                <div class="poem-title">6</div>
+                <div class="poetry-content">
+                    Tâm thầy như tro lạnh,<br>
+                    Hình vóc tựa cây khô.<br>
+                    Nột tử đều quy tụ,<br>
+                    Tựa vang dội hư vô.<br>
+                     Đoái tới thân trần cấu,<br>
+                    Nước đề hồ gội trong.<br>
+                    Xin thầy nêu đèn Phật,<br>
+                    Vì tôi rọi sáng lòng.
+                </div>
+            </div>
+
+            <div class="poem-block">
+                <div class="poem-title">7</div>
+                <div class="poetry-content">
+                    Lơ thơ cây trên núi,<br>
+                    Vào hạ bóng rợp trời.<br>
+                    Bao năm nơi lau sậy,<br>
+                    Tùng lâm nay sáng ngời.<br>
+                    Tôi mới cùng nột tử,<br>
+                    Cùng nghe tiếng hải trào.<br>
+                    Đời người nhiều tụ tán,<br>
+                    Ly biệt chạnh lòng đau.
+                </div>
+            </div>
+
+            <div class="poem-block">
+                <div class="poem-title">8</div>
+                <div class="poetry-content">
+                    Tôi cùng thầy đi lại,<br>
+                    Năm tháng tuy chưa lâu.<br>
+                    Coi như hai đại lão,<br>
+                    Phong lưu rất một màu.<br>
+                    Thầy ngồi yên trên núi,<br>
+                    Tôi góp gạo lo âu.<br>
+                    Giá thầy về đây sớm,<br>
+                    Vui này đậm mà sâu.
+                </div>
+            </div>
+
+            <div class="poem-block">
+                <div class="poem-title">9</div>
+                <div class="poetry-content">
+                    Kẻ học thiền nhộn nhàn,<br>
+                    Khom lưng chạy ngược xuôi.<br>
+                    Nói toàn chuyện cát đằng,<br>
+                    Gậy ý si tuyệt vời.<br>
+                    Tìm bậc tôn đạo đức,<br>
+                    Như thầy được mấy người.<br>
+                    Nguyện truyền người thượng thặng,<br>
+                    Phái Lâm Tế sáng ngời.
+                </div>
+            </div>
+
+            <div class="poem-block">
+                <div class="poem-title">10</div>
+                <div class="poetry-content">
+                    Làng ta nhiều Tăng đồ,<br>
+                    Mông mênh như mây bể.<br>
+                    Đại Cơ mất đã lâu,<br>
+                    Tiểu Cơ còn tại thế.<br>
+                    Nhưng còn lại Nhất Sầm,<br>
+                    Hai vị tìm đâu dễ.<br>
+                    Đường đường hai lão thiền,<br>
+                    Người mong trong bốn bể.
+                </div>
+            </div>
+
+            <div class="poem-block">
+                <div class="poem-title">11</div>
+                <div class="poetry-content">
+                    Xưa không chức trụ trì,<br>
+                    Mà chỉ truyền pháp chỉ.<br>
+                    Ai ngộ được sắc không,<br>
+                    Liền vượt đường sanh tử.<br>
+                    Tăng hèn mờ bản lại,<br>
+                    Há biết Tây qui lý.<br>
+                    Mua thiếp ngồi giường thiền,<br>
+                    Phật pháp cậy đâu nhỉ.
+                </div>
+            </div>
+
+            <div class="poem-block">
+                <div class="poem-title">12</div>
+                <div class="poetry-content">
+                    Trong Tăng có cao Tăng,<br>
+                    Sĩ cũng có cao sĩ.<br>
+                    Tôi tuy chẳng là cao,<br>
+                    Tâm thô biết chế chỉ.<br>
+                    Thầy là người trong ấy,<br>
+                    Làm cao Tăng phải nghĩ.<br>
+                    May thay tôi cùng thầy,<br>
+                    Đều làm người hương lý.
+                </div>
+            </div>
+
+            <div class="poem-block">
+                <div class="poem-title">13</div>
+                <div class="poetry-content">
+                    Thầy vốn cùng Hòa thượng,<br>
+                    Tôi cũng từ Tú Tài.<br>
+                    Tâm nhẫn đều đã triệt,<br>
+                    Già rồi trở lại thôi.<br>
+                    Nay thầy tuy tạm biệt,<br>
+                    Suối, đá cũng bồi hồi.<br>
+                    Ưng duyên xong trở lại,<br>
+                    Thầy đâu nỡ bỏ tôi.
+                </div>
+            </div>
+            
+            <div class="conclusion">
+                "Mười ba bài thơ họa vận Đào Uyên Minh khắc trên bia đá Cảnh Tinh Nham, lưu dấu thiên cổ tình thâm giao tri kỷ giữa Cấp sự Ngô Công Phất và thiền sư Giản Đường."
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">(517) Sơn Hải Đồ:</span> Bộ bản đồ cổ miêu tả các ngọn núi và biển cả nổi tiếng của Trung Hoa.</li>
+                <li><span class="note-num">(518) Nhị Diệu:</span> Chỉ hai bậc tài đức sáng ngời ví như hai vì sao tinh tú gặp nhau.</li>
+                <li><span class="note-num">(519) Cát đằng:</span> Dây sắn dây, trong Thiền tông ẩn dụ cho những lời lý luận rườm rà, vướng mắc văn tự kinh điển.</li>
+                <li><span class="note-num">(520, 521, 522) Đại Cơ, Tiểu Cơ, Nhất Sầm:</span> Các danh tăng hoặc bậc túc đức thời bấy giờ được nhắc đến trong văn cảnh tùng lâm.</li>
+                <li><span class="note-num">(523, 524, 525) Bản lai, Tây qui lý, Giường thiền:</span> Các khái niệm cốt lõi trong tu tập Thiền tông về bản tính chân thật và sự giải thoát sinh tử.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
