@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Chí Đồ Tập - Đoạn 289 (Có Hán Tự)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 850px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc (Chữ Vô Biện) */
+        .container::after {
+            content: "無辯"; 
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.3em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        /* Đoạn văn Âm Hán Việt & Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.15em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; /* Vàng - Bậc chân tu/Đạo đức */
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; /* Đỏ nhạt - Kẻ ác quân/Thiếu đạo đức */
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phần Chú Thích & Từ Vựng */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.2em; padding: 15px; }
+            .dich-nghia { font-size: 1em; line-height: 1.75; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Trích Chí Đồ Tập</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            靈芝照和尚曰：「譖與謗同耶異耶？」曰：譖必者謗而成。蓋有謗而不譖者，未見譖而不謗者也。夫譖之生也，其始因於憎嫉，而終成於輕信，為之者諂佞小人也。古之人，有輸忠以事君者，盡孝以事親者，抱義以結友者。雖君臣之相得，父子之相愛，朋友之相親，一日為人所譖，則反目攘臂，躧逐離間，至於相視如寇雠，雖在古聖賢，所不能免也。然而有初不能辨，久而後明者。有生不能辨，死而後明者。有至死不能辨，終古不能免者，不嗛勝數矣。子游曰：「事君幹思辱矣，朋友幹思疏矣」。此所以戒人遠譖也。嗚呼！譖與謗不可不察也。且經史載之，不為不明. 學者覽之，莫不知其非，往往身趣陷於譖口，噎鬱至死不能自明者。事必怒受譖者之不察，為譖者之諂佞也。至有群小之鞫前，複譖於他人，則又聽之以為然，是可謂聰明乎？蓋善為譖者，稍便鬥構，迎合蒙蔽，使其茫然，如為鬼所昧，至有終身不能察者。孔子曰：「浸潤之譖，膚受之愬」。言其浸潤之來，不使人預覺. 市林投，人必疑其有虎。間有不行焉者，則謂之明道君子矣。余以愚拙初來不喜諂附，望悅於人，遂多為人所譖謗. 余聞之，切自省曰：「彼言果是余？吾當改過彼則師也。彼言果非余？彼亦徒為爾，焉能每我哉。於是耳雖聞之，而口未嘗辨。士君子察不察，在彼才識明不明爾。吾孰能伸其枉直，求知於人哉。然而且不知，久而後明耶？后世而後明耶？終古不明耶？文中子曰：「何以息謗？」曰：「無辨」。吾當事斯語矣。<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 志圖集 (Chí Đồ Tập)</div>
+        </div>
+        
+        <!-- Phần 2: Dịch Nghĩa -->
+        <h2>2. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p><span class="kw-good">Linh Chi Chiếu Hòa thượng</span> nói: "Dèm pha và chê bai cùng nghĩa hay khác nghĩa vậy ư?".</p>
+            
+            <p>Đáp: Dèm pha tất phải nhờ vào chê bai mà thành. Vì lẽ, có kẻ chỉ có chê bai mà không có dèm pha, chưa có kẻ dèm pha mà lại không chê bai. Ôi! Nơi phát xuất của sự dèm pha đầu mối là từ chỗ ghen ghét, sau trở thành tâm tin tưởng mỏng manh. Kẻ làm việc ấy tức là kẻ tiểu nhân, xiểm nịnh.</p>
+
+            <p>Người đời xưa, có kẻ dốc lòng trung để với vua, hết lòng hiếu để thờ cha mẹ, mang điều nghĩa để kết bạn bè, tuy có chỗ tương đắc giữa vua tôi, chỗ tương ái giữa cha con, chỗ tương thân giữa bạn bè. Nhưng một ngày nào đó nếu bị người ngoài dèm pha thì có thể sinh ra những sự việc nhìn nhau bằng hờn giận, sinh ẩu đả lẫn nhau, xua đuổi ly gián nhau, đưa đến chổ coi nhau như quân thù hằn. Những việc này tuy ở ngay địa vị Thánh hiền xưa cũng khó thể tránh được.</p>
+
+            <p>Song, những việc đó, có việc lúc mới xảy ra không thể biện minh được, nhưng mãi tới sau khi chết rồi mới sáng tỏ. cũng có những việc sau khi chết rồi mà vẫn chưa biện minh và cho đến trọn cả những đời sau cũng vẫn không thể làm cho sáng tỏ được. Những việc như thế rất nhiều không thể kể xiết.</p>
+
+            <p>Thầy <span class="kw-good">Tử Du</span> nói: "Bầy tôi thờ vua mà can gián nhiều, ấy là nguyên nhân đem lại sự nhục nhã. Bạn bè mà khuyên can nhau nhiều, nhân thế cũng đem lại sự xa nhau". Lời nói trên đây cốt để răn người đời tránh xa lời dèm pha thôi vậy.</p>
+
+            <p>Ôi! Dèm pha cùng với chê bai, không thể không xét cho kỹ. Và như kinh sử cũng đã chép những điều đó rõ ràng. Người học giả xem đến những chỗ ấy, ai cũng biết nó là trái, thường thường chính thân mình cũng tự giam hãm ở miệng lưỡi kẻ dèm pha, uất ức đến chết mà không thể tự làm sáng tỏ được. Người như thế tất sẽ giận những người chấp nhận lời dèm pha là họ không biết xem xét, nên bị kẻ dèm pha xiểm nịnh ton hót! Dĩ chí có những bọn tiểu nhân đến trước mặt mình mà lại nói lời dèm pha ở những người khác, thì mình lại nghe lời nói ấy cho là phải, như thế sao có thể bảo là người thông minh được ư?</p>
+
+            <p>Vì lẽ, kẻ giỏi nói lời dèm pha, thì họ rất khéo léo, họ tranh đấu biện bạch, họ đón hợp ý người, họ ngăn che sự thật, khiến cho người nghe mờ mịt, như bị quỷ ếm, làm cho người ta đến suốt đời cũng không thể xét rõ được.</p>
+
+            <p>Ngài <span class="kw-good">Khổng Tử</span> nói: "Lời dèm pha cũng như nước thấm nhuần, lời tố giác cũng như da cảm thụ". Nói về sự thấm nhuần, nghĩa là nó lặng lẽ từ từ tới không để cho người ta dự đoán mà biết. Tuy Tăng Sâm là người con chí hiếu, thế nhưng người mẹ vẫn ngờ con mình giết người. Tuy ở quán chợ đông người không phải là rừng rậm, mà người ta vẫn ngờ là trong chợ có hổ. Vì khiến có những người họ không tin những việc như thế, thì đáng gọi họ là minh đạo quân tử vậy.</p>
+
+            <p>Tôi vốn dĩ lấy sự ngu muội lười biếng, không thích xiểm nịnh xu phụ, để lừa dối làm đẹp lòng người, nên tôi bị nhiều người sàm báng. Tôi nghe biết chuyện đó, nhưng tôi lại tự trộm nghĩ rằng: Lời nói kẻ kia hẳn là đúng chăng? Nếu đúng thì ta nên đổi lỗi sửa sai và như vậy người kia là thầy ta. Lời nói của kẻ kia hẳn là trái chăng? Nếu quả là trái thì cho kẻ kia chỉ là nơi những lời không đâu mà thôi. Sao có thể hay làm nhơ được tâm tôi.</p>
+
+            <p>Bởi thế tai tuy có nghe mà miệng chưa từng biện minh. Còn những kẻ sĩ quân tử xét được hay không xét được là do ở tài năng trí thức của họ sáng suốt đó vậy. Tôi cần gì phải giải bày phải trái để mong cầu người ta biết rõ. Song nếu họ không biết được, thì mãi về sau này họ mới rõ được vậy ư? Hay ở đời sau mà họ mới rõ được vậy ư? Hay mãi đời này qua đời khác mà họ cũng vẫn chẳng được rõ vậy ư?</p>
+
+            <p><span class="kw-good">Văn Trung Tử</span> nói: "Đem gì để tắt được sàm báng?". Đáp rằng: <span class="kw-good">"Không cần biện minh"</span>. Tôi rất ưa chuộng lời nói đó vậy.</p>
+            
+            <div class="conclusion">
+                "Sàm báng hiểm sâu thấm dần như nước ngầm; người trí tuệ tự tỉnh xét mình, noi theo châm ngôn 'vô biện' để tĩnh tâm vượt qua thị phi thế tục."
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">(530) Linh Chi Chiếu:</span> Ngài Linh Chi Chiếu Hòa thượng, bậc tôn túc cao tăng với những trước tác sâu sắc đúc kết trong *Chí Đồ Tập*.</li>
+                <li><span class="note-num">(531) Thử Du:</span> Tử Du (Bút Ngô), một trong các học trò xuất sắc của Khổng Tử.</li>
+                <li><span class="note-num">(532) Tăng Sâm:</span> Hiền triết Tăng Tử, nổi tiếng hiếu thảo nhưng từng khiến người mẹ già sinh lòng nghi ngờ do lời dèm pha lặp lại nhiều lần của người ngoài.</li>
+                <li><span class="note-num">(533) Trong chợ có hổ:</span> Điển tích chỉ sự việc dẫu vô lý nhưng nếu bị dèm pha, loan truyền liên tục thì người ta sẽ tin là thật.</li>
+                <li><span class="note-num">(534) Văn Trung Tử:</span> Vương Thông (Văn Trung Tử), nhà tư tưởng lớn thời nhà Tùy, nổi tiếng với chủ trương "vô biện" (không tranh cãi, biện bạch) để dập tắt lời sàm báng.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

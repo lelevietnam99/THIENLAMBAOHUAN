@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trích Lại Am Tập - Đoạn 291 (Có Hán Tự)</title>
+    <style>
+        /* Nhúng font chữ Serif cổ điển và Noto Serif TC (dành riêng cho chữ Hán Phồn Thể) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&family=Noto+Serif+TC:wght@400;600&display=swap');
+
+        /* Thiết lập nền phong cách Thủy Mặc (Ink Wash) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #2c2724 0%, #171412 60%, #0a0908 100%);
+            font-family: 'Lora', 'Times New Roman', serif;
+            color: #eaddcf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng khói sương mờ ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(200, 200, 200, 0.02) 0%, transparent 60%);
+            animation: slowMist 60s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt bụi thời gian lơ lửng */
+        .time-dust {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(212, 175, 55, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 60%, rgba(234, 224, 200, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40% 80%, rgba(212, 175, 55, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70% 20%, rgba(255, 255, 255, 0.2), rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: dustDrift 30s linear infinite;
+        }
+
+        @keyframes slowMist {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        @keyframes dustDrift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 400px -400px; }
+        }
+
+        /* Khung nội dung */
+        .container {
+            background: rgba(26, 23, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 115, 85, 0.4);
+            border-radius: 4px;
+            padding: 60px 50px;
+            max-width: 850px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 0 4px rgba(26, 23, 20, 0.6),
+                        0 0 0 5px rgba(139, 115, 85, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dấu triện đỏ mờ ở góc (Chữ Tăng Vật) */
+        .container::after {
+            content: "僧物"; 
+            position: absolute;
+            top: 40px;
+            right: 45px;
+            font-size: 4.5em;
+            font-family: 'Noto Serif TC', serif;
+            color: rgba(194, 59, 34, 0.06); 
+            writing-mode: vertical-rl;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #d4af37; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.4);
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        h1::after {
+            content: "❖";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+            font-size: 0.6em;
+            background: rgba(26, 23, 20, 1);
+            padding: 0 15px;
+        }
+
+        /* Tiêu đề từng phần */
+        h2 {
+            color: #c23b22; 
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #c23b22;
+            margin-right: 12px;
+        }
+
+        /* Phần HÁN TỰ (Chữ Hán Cổ) */
+        .han-tu {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5em; 
+            line-height: 1.8;
+            color: #d7ccc8;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* Đoạn văn Âm Hán Việt */
+        .han-viet {
+            font-size: 1.1em;
+            line-height: 1.9;
+            color: #a89f91;
+            font-style: italic;
+            text-align: justify;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid rgba(139, 115, 85, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Đoạn văn Dịch Nghĩa */
+        .dich-nghia {
+            font-size: 1.15em;
+            line-height: 1.9;
+            text-align: justify;
+            color: #eae0d5;
+            margin-bottom: 20px;
+        }
+
+        /* Thơ kệ cảnh sách */
+        .poetry {
+            margin: 20px auto;
+            padding: 20px 30px;
+            background: rgba(212, 175, 55, 0.03);
+            border-left: 3px solid #d4af37;
+            border-right: 3px solid #d4af37;
+            max-width: 550px;
+            text-align: center;
+            font-style: italic;
+            color: #f3e9dc;
+            line-height: 1.8;
+        }
+
+        /* Danh sách bốn loại Tăng vật */
+        .tang-vat-list {
+            margin: 15px 0 20px 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .tang-vat-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .tang-vat-list li::before {
+            content: "❖";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-size: 0.8em;
+        }
+
+        /* Tác giả / Nguồn trích */
+        .source {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Highlight nhân vật / Cụm từ */
+        .kw-good {
+            color: #d4af37; /* Vàng - Bậc chân tu/Đạo đức */
+            font-weight: 600;
+        }
+
+        .kw-bad {
+            color: #e57373; /* Đỏ nhạt - Kẻ ác quân/Thiếu đạo đức */
+            font-weight: 600;
+        }
+
+        /* Câu châm ngôn đúc kết cuối bài */
+        .conclusion {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(139, 115, 85, 0.4);
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Phần Chú Thích & Từ Vựng */
+        .footnotes {
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(139, 115, 85, 0.3);
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #b5a999;
+        }
+
+        .footnotes h3 {
+            color: #8b7355;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footnotes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footnotes li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footnotes li span.note-num {
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; }
+            h1 { font-size: 1.6em; }
+            .han-tu { font-size: 1.3em; padding: 15px; }
+            .han-viet, .dich-nghia { font-size: 1em; line-height: 1.75; }
+            .footnotes { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp bụi thời gian trôi nhẹ -->
+    <div class="time-dust"></div>
+
+    <div class="container">
+        <h1>Trích Lại Am Tập</h1>
+
+        <!-- Phần 1: Hán Tự -->
+        <h2>1. Hán Tự (Chữ Hán Cổ)</h2>
+        <div class="han-tu">
+            賴庵曰：律中文：「僧物有四種：一者常住常住，二者十方常住，三者現前常住，四者十方現前常住」。且常住之物，不可絲毫有犯，其罪非輕。先聖後聖，非不丁寧。往往聞者，未能信，信者未能行。山僧或出或處，未嘗不以弗，節節戒意，do 恐有所位志，因術偈以自 cảnh 云：「十方僧物重如山，萬劫千生起異還。金山口談會未信，他年爭免鐵城關。 thân 人難得好思量，頭角生時歲月長。堪笑貪他日納米，等閒失卻半年糧」。<br>
+            <div class="source" style="font-family: 'Lora', serif;">— 賴庵集 (Lại Am Tập)</div>
+        </div>
+        
+        <!-- Phần 2: Âm Hán Việt -->
+        <h2>2. Âm Hán Việt</h2>
+        <div class="han-viet">
+            Lại Am viết: Luật trung văn: "Tăng vật hữu tứ chủng: Nhất giả thường trụ thường trụ, nhị giả thập phương thường trụ, tam giả hiện tiền thường trự, tứ giả thập phương hiện tiền thường trụ. Thả thường trụ chi vật, bất khả ty hào hữu phạm, kỳ tội phi khinh. Tiên thánh hậu thánh, phi bất đinh ninh. Vãng vãng văn giả, vị tật năng tín, tín giả vị tật năng hành. Sơn Tăng hoặc xuất hoặc xử, vị thường bất đính thử, thiết thiết giới ý, do khủng hữu sở vị chí, nhân thuật kệ dĩ tự cảnh vân: "Thập phương Tăng vật trọng như sơn, vạn kiếp thiên sinh khởi dị hoàn. Kim khẩu cộng đàm tằng vị tín, tha niên tranh miễn thiết thành quan. Nhân thân nan đắc hảo tư lường, đầu giác sinh thời tuế nguyệt tràng. Kham tiếu tham tha nhật nạp mễ, đẳng nhan thất khước bán niên lương".
+            <div class="source">— Lại Am Tập.</div>
+        </div>
+
+        <!-- Phần 3: Dịch Nghĩa -->
+        <h2>3. Dịch Nghĩa</h2>
+        <div class="dich-nghia">
+            <p><span class="kw-good">Lại Am</span> nói: Trong Luật nói: Tăng vật có bốn thứ:</p>
+            
+            <ul class="tang-vat-list">
+                <li><strong>a.</strong> Thường trụ thường trụ,</li>
+                <li><strong>b.</strong> Thập phương thường trụ,</li>
+                <li><strong>c.</strong> Hiện tiền thường trụ,</li>
+                <li><strong>d.</strong> Thập phương hiện tiền thường trụ.</li>
+            </ul>
+
+            <p>Đã là vật của thường trụ thì <span class="kw-bad">không được xâm phạm vào một mảy may</span>, vì tội ấy rất nặng. Bậc tiên thánh hậu thánh cũng đều đinh ninh khuyên răn. Thường thường những người nghe biết, nhưng vị tất đã hay tin, vì người đã tin cũng vị tật chịu làm theo.</p>
+
+            <p>Sơn Tăng này hoặc đi ra ngoài, hoặc ở trong chùa, lúc nào cũng ghi lời răn ấy trong tâm khảm. Tuy thế còn sợ có chỗ chưa tới được, nên <span class="kw-good">thuật bài kệ để tự cảnh</span> rằng:</p>
+
+            <div class="poetry">
+                Mười phương Tăng vật nặng như sơn,<br>
+                Muôn kiếp ngàn đời dễ trả đền.<br>
+                Lời Phật nói ra mà chẳng giữ,<br>
+                Ngày kia ngục sắt chớ kêu oan.<br><br>
+                Thân người khó được phải suy lường,<br>
+                Thú vật sinh vô kiếp số trường.<br>
+                Hạt gạo tham chi cho khổ cực,<br>
+                Đền bù mất cả nửa năm lương.
+            </div>
+            
+            <div class="conclusion">
+                "Của mười phương Tăng nặng tựa núi Thái Sơn, mảy may xâm phạm luân hồi khó trả; người tu hành phải cẩn trọng giữ mình, chớ vì tham lam chút lợi nhỏ mà sa đọa ngạ quỷ, súc sinh."
+            </div>
+        </div>
+
+        <!-- Phần Chú Thích & Từ Vựng -->
+        <div class="footnotes">
+            <h3>Chú thích & Từ vựng</h3>
+            <ul>
+                <li><span class="note-num">Tứ chủng Tăng vật (四种僧物):</span> Bốn loại tài sản thuộc về Tăng chúng theo luật Phật chế (bao gồm Thường trụ thường trụ dành riêng cho tự viện cố định, Thập phương thường trụ dùng chung cho Tăng chúng mười phương, Hiện tiền thường trụ và Thập phương hiện tiền thường trụ).</li>
+                <li><span class="note-num">Thiết thành quan (鐵城關):</span> Cửa ải thành sắt, chỉ chốn địa ngục A-tỳ khốc liệt dành cho những kẻ phạm trọng tội xâm phạm tài sản Tam bảo.</li>
+                <li><span class="note-num">Thú vật sinh (頭角生時):</span> Điển tích cảnh tỉnh về nhân quả, kẻ tham lam vật của Tăng chúng sau khi chết phải mang sừng mang lông để trả nợ kiếp súc sinh.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
